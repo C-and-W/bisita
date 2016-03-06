@@ -1,0 +1,63 @@
+<%= @church.name %>,<br>
+<%= @church.location %>
+<br>
+<%= @church.latitude %> &deg;N <%= @church.longitude %> &deg;E
+
+<hr>
+
+<div class="row">
+  <div class="col-md-6">
+    Year: <%= @church.year %><br>
+    <% if @church.year_note.present? %>
+      <%= @church.year_note %><br>
+    <% end %>
+    Architectural Style: <%= @church.architecture %><br>
+    Make/Composition: <%= @church.make %><br>
+    Region: <%= @church.region %>
+  </div>
+  <div class="col-md-6">
+    Distance From Manila: <%= @church.distance %> Km<br>
+    Travel Time From Manila: <br>
+    <% @church.travel_times.each do |t| %>
+      <%= t.transportation %> - <%= t.hours %> hour <%= t.minutes %> minutes <br>
+    <% end %>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <h4><%= @church.bg_title1 %><br>
+    <%= @church.bg_title2 %></h4>
+  <p><%= @church.background %></p>
+</div>
+
+<hr>
+
+<div>
+  <h4>HISTORICAL TIMELINE</h4>
+  <% @church.timeline_points.each do |t| %>
+    <%= t.year %><br>
+    <%= t.description %><br>
+  <% end %>
+</div>
+
+<hr>
+
+<div>
+  <% @church.artistic_values.each do |t| %>
+    <%= t.description %><br><br>
+  <% end %>
+</div>
+
+<hr>
+
+<div>
+  <% if @church.facts.count != 0 %>
+    <h4>DID YOU KNOW?</h4><br>
+    <h4><%= @church.fact_title %></h4>
+    <% @church.facts.each do |f| %>
+      <%= f.description %><br><br>
+    <% end %>
+  <% end %>
+</div>

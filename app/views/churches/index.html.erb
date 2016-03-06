@@ -1,0 +1,37 @@
+<h1>DISCOVER</h1>
+
+Arrange by: <br>
+<%= sortable "year" %> | 
+<%= sortable "architecture" %> | 
+<%= sortable "make", "Composition" %><br>
+<%= sortable "region" %> | 
+<%= sortable "distance", "Distance From Manila" %> | 
+<%= sortable "artistic_value", "Amount of Artistic Value" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Date</td>
+      <td>Architecture</td>
+      <td>Make/Composition</td>
+      <td>Distance from Manila</td>
+      <td>Region</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @churches.each do |church| %>
+      <tr>
+        <td><%= link_to church.name, church %></td>
+        <td><%= church.year %></td>
+        <td><%= church.architecture %></td>
+        <td><%= church.make %></td>
+        <td><%= church.distance %> km</td>
+        <td><%= church.region %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script src="sorttable.js"></script>

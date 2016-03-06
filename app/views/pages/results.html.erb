@@ -1,0 +1,49 @@
+<h1>Results</h1>
+
+<form action="/results">
+  <input name="query">
+  <input type="submit" value="Submit" class="hide"/>
+</form>
+
+<% if @churches.count == 0 %>
+  Sorry, we couldn't find what you searched for.
+<% elsif @churches.count == 1 %>
+  <% @message = 'Found 1 match with the word "'+@query+'"' %>
+<% else %>
+  <% @message = 'Found '+@churches.count.to_s+' matches with the word "'+@query+'"' %>
+<% end %>
+
+
+<% if !@message.nil? && params['query'] != "" %>
+  <%= @message %><br>
+<% end %>
+
+<% if !@message.nil? %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Date</td>
+        <td>Architecture</td>
+        <td>Make/Composition</td>
+        <td>Distance from Manila</td>
+        <td>Region</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @churches.each do |church| %>
+        <tr>
+          <td><%= link_to church.name, church %></td>
+          <td><%= church.year %></td>
+          <td><%= church.architecture %></td>
+          <td><%= church.make %></td>
+          <td><%= church.distance %> km</td>
+          <td><%= church.region %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>

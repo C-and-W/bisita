@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  year: 1
+  architecture: MyString
+  distance: 1
+  make: MyString
+  region: MyString
+  latitude: 1.5
+  longitude: 1.5
+  description: MyText
+  fact_title: MyString
+  fact_description: MyText
+
+two:
+  name: MyString
+  year: 1
+  architecture: MyString
+  distance: 1
+  make: MyString
+  region: MyString
+  latitude: 1.5
+  longitude: 1.5
+  description: MyText
+  fact_title: MyString
+  fact_description: MyText

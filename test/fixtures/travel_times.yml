@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transportation: MyString
+  hours: 1
+  minutes: 1
+
+two:
+  transportation: MyString
+  hours: 1
+  minutes: 1

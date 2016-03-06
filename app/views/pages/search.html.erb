@@ -1,0 +1,47 @@
+<h1>Search</h1>
+
+<form action="/search">
+  <input name="query">
+  <input type="submit" value="Submit" class="hide"/>
+</form>
+
+<% if !@message.nil? %>
+  <%= @message %><br>
+<% end %>
+
+Search suggestions:<br>
+
+
+<table class="table">
+  <tr>
+    <td><%= link_to "Adobe", search_path(:query => "Adobe") %></td>
+    <td><%= link_to "Latin-American", search_path(:query => "Latin-American") %></td>
+    <td><%= link_to "Romanesque", search_path(:query => "Romanesque") %></td>
+  </tr>
+  <tr>
+    <td><%= link_to "Architecture", search_path(:query => "Architecture") %></td>
+    <td><%= link_to "Nave", search_path(:query => "Nave") %></td>
+    <td><%= link_to "Ruins", search_path(:query => "Ruins") %></td>
+  </tr>
+  <tr>
+    <td><%= link_to "Baroque", search_path(:query => "Baroque") %></td>
+    <td><%= link_to "The Nativity", search_path(:query => "The Nativity") %></td>
+    <td><%= link_to "Sistine Chapel", search_path(:query => "Sistine Chapel") %></td>
+  </tr>
+  <tr>
+    <td><%= link_to "Bricks", search_path(:query => "Bricks") %></td>
+    <td><%= link_to "Ornament", search_path(:query => "Ornament") %></td>
+    <td><%= link_to "Spire", search_path(:query => "Spire") %></td>
+  </tr>
+  <tr>
+    <td><%= link_to "Calasiao", search_path(:query => "Calasiao") %></td>
+    <td><%= link_to "Painting", search_path(:query => "Painting") %></td>
+    <td><%= link_to "Style", search_path(:query => "Style") %></td>
+  </tr>
+  <tr>
+    <td><%= link_to "Cathedral", search_path(:query => "Cathedral") %></td>
+    <td><%= link_to "Rebellion", search_path(:query => "Rebellion") %></td>
+    <td><%= link_to "Tanay Church", search_path(:query => "Tanay Church") %></td>
+  </tr>
+</table>
+
