@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  */
- #hs1,#hs2,#hs3,#hs4,#hs5,#hs6,#hs7,#hs8,#hs9 {
+ #body_home{
+ 	overflow-x:hidden;
+ }
+ #hs1,#hs2,#hs3,#hs4,#hs5,#hs6,#hs7,#hs8,#hs9,#hc1,#hc2 {
      background-size: cover;
      -webkit-background-size: cover;
      -moz-background-size: cover;
@@ -34,13 +37,22 @@
      min-height: 60vh;
  }
  #hs5{
-     min-height: 60vh;
+     min-height: 560px;
+ }
+ #hc1{
+ 	min-height: 560px;
+ 	background-image: url(/assets/c1.jpg);
+ }
+ #hc2{
+ 	min-height: 560px;
+ 	background-image: url(/assets/c2.jpg);
  }
   #hs6{
-     min-height: 60vh;
+     min-height: 70vh;
  }
   #hs7{
-     min-height: 70vh;
+     min-height: 100vh;
+     background-image: url(/assets/11.jpg);
  }
   #hs8{
      min-height: 100vh;
@@ -62,10 +74,22 @@
    width:200px!important;
 }
 .navlink{
-	margin:12px 2vw 0px 1vw;
+	margin:8px 2vw 0px 1vw;
 }
 .navlink-a{
 	font-size:19px;margin:none; outline:0; color:white!important;
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: 700;
+}
+
+.navbar {
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+
+.navbar.scrolled {
+	background-color: #B34012!important;
 }

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
-<nav class="navbar navbar-default navbar-fixed-top" style="background-color:transparent; height:94px; padding:none; border-color:transparent; border:none;">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color:transparent; height:100px; padding:none; border-color:transparent; border:none;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -10,7 +12,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><%=image_tag "Logo-White-01.png", :style => "width: 90%; margin-top:5px; margin-left:5vw;"%></a>
+      <a class="navbar-brand" href="#"><%=image_tag "Logo-White-01.png", :style => "width: 90%; margin-top:0px; margin-left:5vw;"%></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,7 +23,7 @@
         <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a" %></li>
         <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a" %></li>
         <li class="navlink"><a class="navlink-a" href="https://houndph.wordpress.com/">SUGGEST </a></li>
-        <li style=" margin:12px 8vw 0px 1vw!important;"><a class="navlink-a" href="https://houndph.wordpress.com/">CONTACT </a></li>
+        <li style=" margin:8px 8vw 0px 1vw!important;"><a class="navlink-a" href="https://houndph.wordpress.com/">CONTACT </a></li>
 
 
 
@@ -30,7 +32,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 </head>
-<body>
+<body id="body_home">
 	<section id="hs1">
 	<!--LANDING-->
 	</section>
@@ -47,6 +49,10 @@
 
 	<section id="hs5">
 	<!--TWO CHURCHES-->
+	<div class="row">
+		<div id="hc1" class="col-md-6"></div>
+		<div id="hc2" class="col-md-6"></div>
+	</div>
 	</section>
 
 	<section id="hs6">
@@ -65,4 +71,22 @@
 	<!--FOOTER-->
 	<%=image_tag "Logo-White-01.png", :style => "width: 170px; margin-top:-5px; margin-left:25vw;"%> <span id="hs9-footer">&nbsp &nbsp&nbsp DISCOVERING PHILIPPINE CHURCHES</span>
 	</section>
+
+	<script type="text/javascript">
+		function checkScroll(){
+		    var startY = $('.navbar').height() * 4; //adjusts where transition starts
+
+		    if($(window).scrollTop() > startY){
+		        $('.navbar').addClass("scrolled");
+		    }else{
+		        $('.navbar').removeClass("scrolled");
+		    }
+		}
+
+		if($('.navbar').length > 0){
+		    $(window).on("scroll load resize", function(){
+		        checkScroll();
+		    });
+		}
+	</script>
 </body>
