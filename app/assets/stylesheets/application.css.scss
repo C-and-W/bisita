@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ #hs1,#hs2,#hs3,#hs4,#hs5,#hs6,#hs7,#hs8,#hs9 {
+     background-size: cover;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+ }
+ #hs1{
+     min-height: 100vh;
+     background-image: url(/assets/2.jpg);
+ }
+ #hs2{
+     min-height: 70vh;
+ }
+ #hs3{
+     min-height: 185vh;
+     background-image: url(/assets/9_1.png);
+ }
+ #hs4{
+     min-height: 60vh;
+ }
+ #hs5{
+     min-height: 60vh;
+ }
+  #hs6{
+     min-height: 60vh;
+ }
+  #hs7{
+     min-height: 70vh;
+ }
+  #hs8{
+     min-height: 100vh;
+ }
+  #hs9{
+     min-height: 17vh;
+     background-image: url(/assets/2.jpg);
+     background-position: center; 
+ }
+ #hs9-footer{
+ 	color: white;
+ 	font-size: 19px;
+ 	margin-top: 45px;
+ 	display:inline-block;
+ 	font-family: 'Titillium Web', sans-serif;
+ 	font-weight: 700;
+ }
+ .navbar-brand{
+   width:200px!important;
+}
+.navlink{
+	margin:12px 2vw 0px 1vw;
+}
+.navlink-a{
+	font-size:19px;margin:none; outline:0; color:white!important;
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 700;
+}

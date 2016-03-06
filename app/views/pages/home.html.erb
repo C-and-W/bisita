@@ -1,2 +1,68 @@
-<%= link_to 'Discover', churches_path %> | 
-<%= link_to 'Search', search_path %>
+<!DOCTYPE html>
+<head>
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color:transparent; height:94px; padding:none; border-color:transparent; border:none;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%=image_tag "Logo-White-01.png", :style => "width: 90%; margin-top:5px; margin-left:5vw;"%></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
+      <ul class="nav navbar-nav navbar-right" style="padding-top:20px;">
+        <li class="navlink"><a class="navlink-a" href="https://houndph.wordpress.com/">HOME</a></li>
+        <li class="navlink"><a class="navlink-a" href="https://houndph.wordpress.com/">ABOUT </a></li>
+        <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a" %></li>
+        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a" %></li>
+        <li class="navlink"><a class="navlink-a" href="https://houndph.wordpress.com/">SUGGEST </a></li>
+        <li style=" margin:12px 8vw 0px 1vw!important;"><a class="navlink-a" href="https://houndph.wordpress.com/">CONTACT </a></li>
+
+
+
+      </ul>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+</head>
+<body>
+	<section id="hs1">
+	<!--LANDING-->
+	</section>
+	<section id="hs2">
+	<!--BLANK-->
+	</section>
+	<section id="hs3">
+	<!--IMAGE LONG-->
+	</section>
+
+	<section id="hs4">
+	<!--BLANK-->
+	</section>
+
+	<section id="hs5">
+	<!--TWO CHURCHES-->
+	</section>
+
+	<section id="hs6">
+	<!--BLANK-->
+	</section>
+
+	<section id="hs7">
+	<!--CEILING-->
+	</section>
+
+	<section id="hs8">
+	<!--BLANK-->
+	</section>
+
+	<section id="hs9">
+	<!--FOOTER-->
+	<%=image_tag "Logo-White-01.png", :style => "width: 170px; margin-top:-5px; margin-left:25vw;"%> <span id="hs9-footer">&nbsp &nbsp&nbsp DISCOVERING PHILIPPINE CHURCHES</span>
+	</section>
+</body>
