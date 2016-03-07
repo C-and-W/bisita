@@ -36,3 +36,5 @@ sa search, yung x results found. yung x = number of churches found not number of
 https://github.com/sunspot/sunspot/wiki/Adding-Sunspot-search-to-Rails-in-5-minutes-or-less
 idk how to sunspot solr yet in production
 autocommit, reindex
+
+error sa search if puro whitespaces input

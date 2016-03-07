@@ -5,45 +5,40 @@
   <input type="submit" value="Submit" class="hide"/>
 </form>
 
-<% if @churches.count == 0 %>
-  Sorry, we couldn't find what you searched for.
-<% elsif @churches.count == 1 %>
-  <% @message = 'Found 1 match with the word "'+@query+'"' %>
+<% if params['query'] == "" %>
+  No search query
 <% else %>
-  <% @message = 'Found '+@churches.count.to_s+' matches with the word "'+@query+'"' %>
-<% end %>
+
+  <% if @churches.count == 0 %>
+    Sorry, we couldn't find what you searched for.
+  <% elsif @churches.count == 1 %>
+    <% @message = 'Found 1 match with the word "'+params['query']+'"' %>
+  <% else %>
+    <% @message = 'Found '+@churches.count.to_s+' matches with the word "'+params['query']+'"' %>
+  <% end %>
 
 
-<% if !@message.nil? && params['query'] != "" %>
-  <%= @message %><br>
-<% end %>
+  <% if !@message.nil? %>
+    <%= @message %><br>
 
-<% if !@message.nil? %>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <td>Name</td>
-        <td>Date</td>
-        <td>Architecture</td>
-        <td>Make/Composition</td>
-        <td>Distance from Manila</td>
-        <td>Region</td>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @churches.each do |church| %>
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= link_to church.name, church %></td>
-          <td><%= church.year %></td>
-          <td><%= church.architecture %></td>
-          <td><%= church.make %></td>
-          <td><%= church.distance %> km</td>
-          <td><%= church.region %></td>
+          <td>Name</td>
+          <td>Result</td>
         </tr>
-      <% end %>
-    </tbody>
+      </thead>
+
+      <tbody>
+        <% @search.each_hit_with_result do |hit, church| %>
+          <tr>
+            <td><%= link_to church.name, church %></td>
+            <td>"<%= hit.highlight(:background).format { |fragment| content_tag(:strong, fragment) }.html_safe %>"</td>
+          </tr>
+        <% end %>
+      </tbody>
   </table>
+
+  <% end %>
 
 <% end %>
