@@ -8,4 +8,13 @@ class Church < ActiveRecord::Base
   accepts_nested_attributes_for :facts, :allow_destroy => true
   accepts_nested_attributes_for :timeline_points, :allow_destroy => true
   accepts_nested_attributes_for :travel_times, :allow_destroy => true
+
+  searchable do
+    text :name, :boost => 5
+    text :background
+    text :artistic_values do
+      artistic_values.map(&:description)
+    end
+  end
+    
 end

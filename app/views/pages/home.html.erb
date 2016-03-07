@@ -18,12 +18,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
       <ul class="nav navbar-nav navbar-right" style="padding-top:20px;">
-        <li class="navlink active"><a class="" href="#">HOME</a></li>
-        <li class="navlink"><a class="navlink-a" href="">ABOUT </a></li>
+
+        <li class="navlink active"><a class="navlink-a" href="">HOME</a></li>
+        <li class="navlink"><%= link_to 'ABOUT', about_path,:class=>"navlink-a" %></li>
         <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a" %></li>
         <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a" %></li>
-        <li class="navlink"><a class="navlink-a" href="">SUGGEST </a></li>
-        <li style=" margin:8px 7vw 0px 1vw!important;"><a class="navlink-a" href="">CONTACT </a></li>
+        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a" %></li>
+        <li style=" margin:8px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a" %></li>
 
 
 
