@@ -2,13 +2,31 @@ class PagesController < ApplicationController
   before_action :set_query, only: [:search, :results]
 
   def try
+    @query = params['query']
+    if @query != nil
+      @search = Church.search do 
+      fulltext @query do 
+        highlight :background
+        highlight :artistic_values
+        end
+        order_by(:score, :asc)
+      end
+      @churches = @search.results
+    elsif @query == ""
+      @churches = Church.all
+    end
     @search = Church.search do 
-      fulltext params['query']
+      fulltext params['query'] do 
+        highlight :background
+        highlight :artistic_values
+      end
       order_by(:score, :asc)
-    end 
+    end
+
     @churches = @search.results
-    render :try
+    #@hits = search.hits
   end
+
   def login
   end
 

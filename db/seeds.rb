@@ -57,3 +57,5 @@ ArtisticValue.create(description: 'Prized original Baroque-carved altar and reta
 ArtisticValue.create(description: 'Sculptures of The Nativity and the Scared Heart of Jesus', church_id: 2)
 ArtisticValue.create(description: 'Sunico heritage bell', church_id: 2)
 ArtisticValue.create(description: 'The convent lobby features representations of the life and creedal expressions of the people of Calasiao', church_id: 2)
+
+Sunspot.commit

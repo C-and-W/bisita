@@ -1,19 +1,39 @@
 <form action="/try">
-  <input name="query">
-  <input type="submit" value="Submit" class="hide"/>
+  <input id="query" name="query">
+  <input type="submit" value="Submit" class="hide" onclick="isEmpty(query)"/>
 </form>
 
-<% if !@churches.empty? %>
+
+
+<% if params['query'].nil? %>
+
+<% else %>
+
+<% if params['query'] == "" %>
+No search query
+<% else %>
+
+<!-- if !@churches.empty? %>
+        content_tag(:em, fragment) } %></p> -->
+
 <table class="table">
   <tr>
     <td>Title</td>
-    <td>Background</td>
+    <td>Results</td>
   </tr>
-<% @churches.each do |c| %>
+<% @search.each_hit_with_result do |hit, church| %>
   <tr>
-    <td><%= c.name %></td>
-    <td><%= c.background %></td>
+    <td><%= church.name %></td>
+    <td><%= hit.highlight(:background).format { |fragment| content_tag(:strong, fragment) }.html_safe %></td>
   </tr>
 <% end %>
 </table>
 <% end %>
+
+<% end %>
+
+<script>
+function isEmpty(str) {
+    return str.replace(/^\s+|\s+$/gm,'').length == 0;
+}
+</script>
