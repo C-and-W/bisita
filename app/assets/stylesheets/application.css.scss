@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ 
  #body_home{
   overflow-x:hidden;
  }
@@ -429,4 +430,26 @@ min-height: 700px;
     right: 30px;
     bottom: 30px;
   }
+}
+/*Carousel*/
+carousel,
+.item,
+.active {
+    height: 100vh;
+}
+
+.carousel-inner {
+    height: 100vh;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
