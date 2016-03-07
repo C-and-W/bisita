@@ -31,3 +31,7 @@ Please feel free to use a different markup language if you do not plan to run
 convert lat lon to decimal
 majayjay date nilagay ko na lang na isa kasi need na int for sorting
 sa search, yung x results found. yung x = number of churches found not number of matching words
+
+
+https://github.com/sunspot/sunspot/wiki/Adding-Sunspot-search-to-Rails-in-5-minutes-or-less
+idk how to sunspot solr yet in production

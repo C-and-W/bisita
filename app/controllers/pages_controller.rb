@@ -1,5 +1,13 @@
 class PagesController < ApplicationController
   before_action :set_query, only: [:search, :results]
+
+  def try
+    @search = Church.search do 
+      fulltext params[:query]
+      order_by(:score, :asc)
+    end 
+    @churches = @search.results
+  end
   def login
   end
 
