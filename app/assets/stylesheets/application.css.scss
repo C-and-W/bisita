@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
  #body_home{
   overflow-x:hidden;
  }
@@ -66,13 +67,13 @@
      background-image: url(/assets/11.jpg);
  }
   #hs8{
-     min-height: 130vh;
-     padding-top: 7vh;
+     min-height: 110vh;
+     padding-top: 4vh;
  }
  .hs8-regions{
   margin-top: 100px;
-  width:70vw;
-  margin-left: 15vw;
+  width:60vw;
+  margin-left: 20vw;
  }
  .hs8-rlink{
   min-height: 80px;
@@ -80,6 +81,7 @@
   font-family: 'Titillium Web', sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
+  font-size: 18px;
  }
   #hs9{
      min-height: 17vh;
@@ -111,8 +113,8 @@
  .h-title2{
   font-family: 'Titillium Web', sans-serif;
   font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 2px;
+  font-size: 18px;
+  letter-spacing: 1px;
   color: #BB5F31;
  }
  #hs2-u1{
@@ -127,15 +129,18 @@
   border-color: black;
   border-width: 2px;
  }
+
  .navbar-brand{
    width:200px!important;
 }
 .navlink{
-  margin:8px 2vw 0px 1vw;
+
+	margin:7px 2vw 0px 1vw;
+
 }
 .navlink-a{
 	letter-spacing: 1px;
-	font-size:16px;margin:none; outline:0; color:white!important;
+	font-size:19px!important;margin:none; outline:0; color:white!important;
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: 700;
 }
@@ -153,21 +158,37 @@
 }
 
  .navbar-default .navbar-nav > li > a {
-   border-bottom: solid transparent 3px;
-   line-height: 1px;
+   border-bottom: solid transparent 2px;
+   padding-bottom: 2px!important;
+    padding-left: 0 !important;
+padding-right: 0 !important;
+margin-left: 15px;
+margin-right: 15px;
  }
  .navbar-default .navbar-nav > li > a:hover,
  .navbar-default .navbar-nav > li > a:focus {
    background-color: transparent;
-   border-bottom: solid white 3px;
-   line-height: 1px;
+   border-bottom: solid white 2px;
+   padding-bottom: 2px!important;
+    padding-left: 0 !important;
+padding-right: 0 !important;
+margin-left: 15px;
+margin-right: 15px;
  }
  .navbar-default .navbar-nav > .active > a,
  .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .active > a:focus {
    background-color: transparent;
-   border-bottom: solid white 3px;
-   line-height: 1px;
+   border-bottom: solid white 2px;
+   padding-bottom: 2px!important;
+    padding-left: 0 !important;
+padding-right: 0 !important;
+margin-left: 15px;
+margin-right: 15px;
+	letter-spacing: 1px;
+	font-size:16px;margin:none; outline:0; color:white!important;
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 700;
  }
 
 /*CSS FLIP*/
@@ -307,7 +328,7 @@ min-height: 700px;
 }
 
 #as2, #as3, #as4{
-    min-height: 90vh;
+    min-height: 95vh;
 }
 
 #as2{
@@ -334,14 +355,14 @@ min-height: 700px;
 .a-td1 {
     padding-top: 30.5vh; /* 325px */
     font-weight: 900;
-    font-size: 65px;
+    font-size: 50px;
     letter-spacing: 3px;
 }
 
 .a-td2, .a-td3, .a-td4 {
     padding-top: 30.5vh;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 19px;
     letter-spacing: 2px;
 }
 
@@ -354,7 +375,18 @@ min-height: 700px;
     text-align: left;
     margin-left: 7vw!important;
 }
+ #ab2-u1{
+  margin-top: 20px;
+  width:6.5vw;
+  border-color: #BB5F31;
+  border-width: 2px;
 
+ }
+ #ab6{
+     min-height: 17vh;
+     background-color: #BB5F31;
+     background-position: center; 
+ }
 
 /*CD TOP*/
 .cd-top {
@@ -409,4 +441,26 @@ min-height: 700px;
     right: 30px;
     bottom: 30px;
   }
+}
+/*Carousel*/
+carousel,
+.item,
+.active {
+    height: 100vh;
+}
+
+.carousel-inner {
+    height: 100vh;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }

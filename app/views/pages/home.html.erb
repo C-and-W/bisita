@@ -2,6 +2,12 @@
 <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
+        <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
 <nav class="navbar navbar-default navbar-fixed-top" style="background-color:transparent; height:100px; padding:none; border-color:transparent; border:none;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -18,12 +24,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
       <ul class="nav navbar-nav navbar-right" style="padding-top:20px;">
-        <li class="navlink"><a class="navlink-a" href="">HOME</a></li>
+
+        <li class="navlink active"><a class="navlink-a" href="">HOME</a></li>
         <li class="navlink"><%= link_to 'ABOUT', about_path,:class=>"navlink-a" %></li>
         <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a" %></li>
         <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a" %></li>
         <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a" %></li>
-        <li style=" margin:8px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a" %></li>
+        <li style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a" %></li>
 
 
 
@@ -35,6 +42,43 @@
 <body id="body_home">
 	<section id="hs1">
 	<!--LANDING-->
+	 <header id="myCarousel" class="carousel slide">
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image: url(/assets/2.jpg);"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 1</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image: url(/assets/2.jpg);"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image: url(/assets/2.jpg);"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </header>
+
 	</section>
 	<section id="hs2" class="row">
 	<!--BLANK-->
@@ -113,62 +157,12 @@
 	<!--FOOTER-->
 	<%=image_tag "Logo-White-01.png", :style => "width: 170px; margin-top:-5px; margin-left:25vw;"%> <span id="hs9-footer">&nbsp &nbsp&nbsp DISCOVERING PHILIPPINE CHURCHES</span>
 	</section>
-	<a href="#0" class="cd-top">Top</a>
-	<script src="assets/modernizr.js"></script> <!-- Modernizr -->
-	<script type="text/javascript">
-		function checkScroll(){
-		    var startY = $('.navbar').height() * 4; //adjusts where transition starts
+	
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
 
-		    if($(window).scrollTop() > startY){
-		        $('.navbar').addClass("scrolled");
-		    }else{
-		        $('.navbar').removeClass("scrolled");
-		    }
-		}
-
-		if($('.navbar').length > 0){
-		    $(window).on("scroll load resize", function(){
-		        checkScroll();
-		    });
-		}
-		// jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-    $('.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1400, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
-
-jQuery(document).ready(function($){
-	// browser window scroll (in pixels) after which the "back to top" link is shown
-	var offset = 300,
-		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-		offset_opacity = 1200,
-		//duration of the top scrolling animation (in ms)
-		scroll_top_duration = 700,
-		//grab the "back to top" link
-		$back_to_top = $('.cd-top');
-
-	//hide or show the "back to top" link
-	$(window).scroll(function(){
-		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-		if( $(this).scrollTop() > offset_opacity ) { 
-			$back_to_top.addClass('cd-fade-out');
-		}
-	});
-
-	//smooth scroll to top
-	$back_to_top.on('click', function(event){
-		event.preventDefault();
-		$('body,html').animate({
-			scrollTop: 0 ,
-		 	}, scroll_top_duration
-		);
-	});
-
-});
-	</script>
 </body>
