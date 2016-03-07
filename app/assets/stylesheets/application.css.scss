@@ -27,6 +27,38 @@
      min-height: 100vh;
      background-image: url(/assets/2.jpg);
  }
+ .hs1-title{
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  font-size: 57px;
+  letter-spacing: 3px;
+  color:white;
+ }
+  .hs1-s-title{
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color:white;
+ }
+ .hs1-btn{
+  z-index:99999!important;
+ 	  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color:white;
+  width: 150px;
+  padding: 3px;
+  margin-top: 30px;
+  border:solid white 1px;
+ }
+  .hs1-titlediv{
+padding-top: 30vh;
+ }
+ .carousel-caption{
+ 	padding-top-top: 0px!important;
+ }
  #hs2{
      min-height: 75vh;
  }
@@ -390,7 +422,7 @@ min-height: 700px;
 
 /*CD TOP*/
 .cd-top {
-  z-index:11;
+  z-index:11000;
   display: inline-block;
   height: 40px;
   width: 40px;
@@ -451,6 +483,11 @@ carousel,
 
 .carousel-inner {
     height: 100vh;
+}
+.carousel-control .icon-prev, 
+.carousel-control .icon-next {
+    font-size: 70px;
+    margin-top: -70px;
 }
 
 /* Background images are set within the HTML using inline CSS, not here */
