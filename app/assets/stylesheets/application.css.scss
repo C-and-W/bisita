@@ -82,14 +82,14 @@
  	letter-spacing: 2px;
  }
   #hs9{
-     min-height: 17vh;
+     min-height: 19vh;
      background-image: url(/assets/2.jpg);
      background-position: center; 
  }
  #hs9-footer{
  	color: white;
  	font-size: 19px;
- 	margin-top: 45px;
+ 	margin-top: 38px;
  	display:inline-block;
  	font-family: 'Titillium Web', sans-serif;
  	font-weight: 700;
@@ -127,11 +127,12 @@
  	border-color: black;
  	border-width: 2px;
  }
+
  .navbar-brand{
    width:200px!important;
 }
 .navlink{
-	margin:8px 2vw 0px 1vw;
+	margin:7px 2vw 0px 1vw;
 }
 .navlink-a{
 	letter-spacing: 1px;
@@ -153,21 +154,37 @@
 }
 
  .navbar-default .navbar-nav > li > a {
-   border-bottom: solid transparent 3px;
-   line-height: 1px;
+   border-bottom: solid transparent 2px;
+   padding-bottom: 2px!important;
+    padding-left: 0 !important;
+padding-right: 0 !important;
+margin-left: 15px;
+margin-right: 15px;
  }
  .navbar-default .navbar-nav > li > a:hover,
  .navbar-default .navbar-nav > li > a:focus {
    background-color: transparent;
-   border-bottom: solid white 3px;
-   line-height: 1px;
+   border-bottom: solid white 2px;
+   padding-bottom: 2px!important;
+    padding-left: 0 !important;
+padding-right: 0 !important;
+margin-left: 15px;
+margin-right: 15px;
  }
  .navbar-default .navbar-nav > .active > a,
  .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .active > a:focus {
    background-color: transparent;
-   border-bottom: solid white 3px;
-   line-height: 1px;
+   border-bottom: solid white 2px;
+   padding-bottom: 2px!important;
+    padding-left: 0 !important;
+padding-right: 0 !important;
+margin-left: 15px;
+margin-right: 15px;
+	letter-spacing: 1px;
+	font-size:16px;margin:none; outline:0; color:white!important;
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 700;
  }
 
 /*CSS FLIP*/
