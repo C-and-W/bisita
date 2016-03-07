@@ -3,10 +3,11 @@ class PagesController < ApplicationController
 
   def try
     @search = Church.search do 
-      fulltext params[:query]
+      fulltext params['query']
       order_by(:score, :asc)
     end 
     @churches = @search.results
+    render :try
   end
   def login
   end

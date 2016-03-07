@@ -2,3 +2,18 @@
   <input name="query">
   <input type="submit" value="Submit" class="hide"/>
 </form>
+
+<% if !@churches.empty? %>
+<table class="table">
+  <tr>
+    <td>Title</td>
+    <td>Background</td>
+  </tr>
+<% @churches.each do |c| %>
+  <tr>
+    <td><%= c.name %></td>
+    <td><%= c.background %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
