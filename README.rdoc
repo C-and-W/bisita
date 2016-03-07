@@ -38,3 +38,11 @@ idk how to sunspot solr yet in production
 autocommit, reindex
 
 error sa search if puro whitespaces input
+
+multiple columns na highlight
+something about merge
+http://stackoverflow.com/questions/7161499/how-highlight-found-word-with-sunspot
+
+nagerror pag for ex. nasa architecture pero ala sa background??
+
+bundle exec rake sunspot:solr:start # or sunspot:solr:run to start in foreground

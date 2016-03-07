@@ -2,9 +2,12 @@ class PagesController < ApplicationController
   before_action :set_query, only: [:search, :results]
 
   def search
+
     if params['query'] != nil
       if @churches.count == 0
         @message = "Sorry, we couldn't find what you searched for."
+      elsif params['query'].strip.empty?
+        @message = "No search query"
       else
         redirect_to results_path(:query => params['query'])
       end
@@ -36,8 +39,10 @@ class PagesController < ApplicationController
       if params['query'] != nil
         @search = Church.search do 
           fulltext params['query'] do 
-            highlight :background
-            highlight :artistic_values
+            highlight :background, :fragment_size => 150
+            #:max_snippets => 3, 
+            #, :architecture
+            # highlight :artistic_values
           end
           order_by(:score, :asc)
         end

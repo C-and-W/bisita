@@ -5,7 +5,7 @@
   <input type="submit" value="Submit" class="hide"/>
 </form>
 
-<% if params['query'] == "" %>
+<% if params['query'] == "" || params['query'].strip.empty? %>
   No search query
 <% else %>
 
