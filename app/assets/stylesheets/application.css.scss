@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
+
  #body_home{
   overflow-x:hidden;
  }
@@ -328,7 +328,7 @@ min-height: 700px;
 }
 
 #as2, #as3, #as4{
-    min-height: 90vh;
+    min-height: 95vh;
 }
 
 #as2{
@@ -355,14 +355,14 @@ min-height: 700px;
 .a-td1 {
     padding-top: 30.5vh; /* 325px */
     font-weight: 900;
-    font-size: 65px;
+    font-size: 50px;
     letter-spacing: 3px;
 }
 
 .a-td2, .a-td3, .a-td4 {
     padding-top: 30.5vh;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 19px;
     letter-spacing: 2px;
 }
 
@@ -375,7 +375,13 @@ min-height: 700px;
     text-align: left;
     margin-left: 7vw!important;
 }
+ #ab2-u1{
+  margin-top: 20px;
+  width:6.5vw;
+  border-color: #BB5F31;
+  border-width: 2px;
 
+ }
 
 /*CD TOP*/
 .cd-top {
