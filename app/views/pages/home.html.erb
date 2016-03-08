@@ -135,6 +135,7 @@
 	</section>
 	<section id="hs3">
 	<!--IMAGE LONG-->
+	<div class="parallax-window2" data-parallax="scroll" data-image-src="/assets/9_1.png"></div>
 	</section>
 
 	<section id="hs4">
@@ -177,6 +178,7 @@
 
 	<section id="hs7">
 	<!--CEILING-->
+	<div class="parallax-window1" data-parallax="scroll" data-image-src="/assets/11.jpg"></div>
 	</section>
 
 	<section id="hs8">
@@ -204,9 +206,12 @@
 	<%=image_tag "Logo-White-01.png", :style => "width: 170px; margin-top:-5px; margin-left:25vw;"%> <span id="hs9-footer">&nbsp &nbsp&nbsp DISCOVERING PHILIPPINE CHURCHES</span>
 	</section>
 
-	
+	<script src="/assets/parallax.js"></script>
     <!-- Script to Activate the Carousel -->
     <script>
+    $('.parallax-window1').parallax({imageSrc: '/assets/11.jpg'});
+    $('.parallax-window2').parallax({imageSrc: '/assets/9_1.png'});
+
     $('.carousel').carousel({
         interval: 8000 //changes the speed
     })

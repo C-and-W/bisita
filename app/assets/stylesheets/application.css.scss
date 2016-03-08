@@ -26,6 +26,7 @@
  #hs1{
      min-height: 100vh;
      background-image: url(/assets/2.jpg);
+     background-attachment: fixed;
  }
  .hs1-title{
   font-family: 'Titillium Web', sans-serif;
@@ -67,8 +68,11 @@ padding-top: 30vh;
  }
  #hs3{
      min-height: 185vh;
-     background-image: url(/assets/9_1.png);
  }
+  .parallax-window2 {
+    min-height: 185vh;
+    background: transparent;
+}
  #hs4{
      min-height: 60vh;
  }
@@ -99,8 +103,11 @@ padding-top: 30vh;
  }
   #hs7{
      min-height: 100vh;
-     background-image: url(/assets/11.jpg);
  }
+ .parallax-window1 {
+    min-height: 100vh;
+    background: transparent;
+}
   #hs8{
      min-height: 110vh;
      padding-top: 4vh;
@@ -122,6 +129,7 @@ padding-top: 30vh;
      min-height: 17vh;
      background-image: url(/assets/2.jpg);
      background-position: center; 
+     background-attachment: fixed;
  }
  #hs9-footer{
  	color: white;
