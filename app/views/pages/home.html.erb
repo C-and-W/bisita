@@ -40,7 +40,7 @@
 <body id="body_home">
 	<section id="hs1">
 	<!--LANDING-->
-	 <div id="myCarousel" class="carousel slide" style=" position:relative; ">
+	 <div id="myCarousel" class="carousel slide parallax-window-3" style=" position:relative; "data-parallax="scroll" data-image-src="/assets/2.jpg">>
 
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
@@ -211,9 +211,10 @@
     <script>
     $('.parallax-window1').parallax({imageSrc: '/assets/11.jpg'});
     $('.parallax-window2').parallax({imageSrc: '/assets/9_1.png'});
+    $('.parallax-window3').parallax({imageSrc: '/assets/2.jpg'});
 
     $('.carousel').carousel({
-        interval: 8000 //changes the speed
+        interval: 7000 //changes the speed
     })
 
     </script>
