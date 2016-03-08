@@ -17,13 +17,13 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
-      <ul class="nav navbar-nav navbar-right" style="padding-top:20px;">
-        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a" %></li>
-        <li class="navlink active"><%= link_to 'ABOUT', about_path,:class=>"navlink-a" %></li>
-        <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a" %></li>
-        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a" %></li>
-        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a" %></li>
-        <li style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a" %></li>
+      <ul class="nav navbar-nav navbar-right" style="padding-top:20px;height:100px!important;">
+        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink active"><%= link_to 'ABOUT', about_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a", 'data-no-turbolink' => true  %></li>
 
 
 
@@ -53,6 +53,47 @@
 
   <section id="as5">
   <!--IMAGE LONG-->
+  <div class="row as5-cont">
+      <%= link_to churches_path,:class=>"" do%>
+    <div class="col-md-4 as5-sec">
+        <center>
+          <%=image_tag "about1.png", :class=>"as5-pic"%>
+          <br><br>
+          <span class="as5-text">
+          CHURCHES
+          </span>
+      <hr class="as1-u1">
+      </center>
+    </div>
+    <%end%>
+    
+
+    <a href="#">
+    <div class="col-md-4 as5-sec">
+    <center>
+      <%=image_tag "about2.png", :class=>"as5-pic"%>
+      <br><br>
+      <span class="as5-text">
+      CONTRIBUTE</span>
+
+      <hr class="as1-u1">
+      </center>
+    </div>
+    </a>
+
+    <a href="#">
+    <div class="col-md-4 as5-sec">
+    <center>
+      <%=image_tag "about3.png", :class=>"as5-pic"%>
+      <br><br>
+      <span class="as5-text">
+      NEWS
+   </span>
+   <hr class="as1-u1">
+      </center>
+    </div>
+  </div>
+  </a>
 
   </section>
 <section id="ab6">
