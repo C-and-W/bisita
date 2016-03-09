@@ -29,7 +29,9 @@ Please feel free to use a different markup language if you do not plan to run
 
 DEVELOPMENT STAGE(for search to work)
   - need to install java runtime environment
-  - in terminal type "bundle exec rake sunspot:solr:start"
+  - bundle install
+  - then in terminal type "bundle exec rake sunspot:solr:start"
+  - then open another terminal tab then type rake db:setup. then rails s
 
 PRODUCTION STAGE
   - idk pa hehehe
