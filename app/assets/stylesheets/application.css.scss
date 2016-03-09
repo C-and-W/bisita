@@ -25,7 +25,7 @@
  }
  #hs1{
      min-height: 100vh;
-     background-image: url(/assets/2.jpg);
+     background-color: transparent;
  }
  .hs1-title{
   font-family: 'Titillium Web', sans-serif;
@@ -42,8 +42,7 @@
   color:white;
  }
  .hs1-btn{
-  z-index:99999!important;
- 	  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 700;
   font-size: 26px;
   letter-spacing: 1px;
@@ -51,7 +50,20 @@
   width: 150px;
   padding: 3px;
   margin-top: 30px;
-  border:solid white 1px;
+  border:solid white 2px;
+ }
+ .hs1-btn:hover{
+ 	color:black!important;
+background-color: white!important;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+ }
+ .btn-hs1{
+text-decoration: none!important;
+z-index:99999!important;
  }
   .hs1-titlediv{
 padding-top: 30vh;
@@ -64,8 +76,11 @@ padding-top: 30vh;
  }
  #hs3{
      min-height: 185vh;
-     background-image: url(/assets/9_1.png);
  }
+  .parallax-window2 {
+    min-height: 185vh;
+    background: transparent;
+}
  #hs4{
      min-height: 60vh;
  }
@@ -96,8 +111,11 @@ padding-top: 30vh;
  }
   #hs7{
      min-height: 100vh;
-     background-image: url(/assets/11.jpg);
  }
+ .parallax-window1 {
+    min-height: 100vh;
+    background: transparent;
+}
   #hs8{
      min-height: 110vh;
      padding-top: 4vh;
@@ -119,6 +137,7 @@ padding-top: 30vh;
      min-height: 17vh;
      background-image: url(/assets/2.jpg);
      background-position: center; 
+     background-attachment: fixed;
  }
  #hs9-footer{
  	color: white;
@@ -130,7 +149,7 @@ padding-top: 30vh;
  	letter-spacing: 2px;
  }
  .h-td1{
-  margin-top: 14vh;
+  margin-top: 15vh;
  }
  .h-td2{
   margin-top: 6.5vh;
@@ -178,13 +197,13 @@ padding-top: 30vh;
 }
 
 .navbar {
-    -webkit-transition: all 0.6s ease-out;
-    -moz-transition: all 0.6s ease-out;
-    -o-transition: all 0.6s ease-out;
-    -ms-transition: all 0.6s ease-out;
-    transition: all 0.6s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    z-index: 9999!important;
 }
-
 .navbar.scrolled {
   background-color: #BB5F31!important;
 }
@@ -196,7 +215,13 @@ padding-top: 30vh;
 padding-right: 0 !important;
 margin-left: 15px;
 margin-right: 15px;
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
  }
+
  .navbar-default .navbar-nav > li > a:hover,
  .navbar-default .navbar-nav > li > a:focus {
    background-color: transparent;
@@ -206,6 +231,11 @@ margin-right: 15px;
 padding-right: 0 !important;
 margin-left: 15px;
 margin-right: 15px;
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
  }
  .navbar-default .navbar-nav > .active > a,
  .navbar-default .navbar-nav > .active > a:hover,
@@ -221,6 +251,11 @@ margin-right: 15px;
 	font-size:16px;margin:none; outline:0; color:white!important;
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: 700;
+	    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
  }
 
 /*CSS FLIP*/
@@ -229,6 +264,7 @@ margin-right: 15px;
     -moz-perspective: 1000;
     -o-perspective: 1000;
     perspective: 1000;
+
 }
 
 .flip-container, .front, .back {
@@ -312,7 +348,7 @@ min-height: 700px;
 }
 
 #cs1{
-    min-height: 100vh;
+    height: 100vh;
     background-image: url(/assets/38.jpg);
 }
 
@@ -322,13 +358,13 @@ min-height: 700px;
 }
 
 .c-td1{
-    padding-top: 300px;
+    padding-top: 30vh;
 }
 
 .c-title1{
     font-weight: 900;
     font-size: 60px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .c-td2{
@@ -356,28 +392,56 @@ min-height: 700px;
 
 #as1{
     min-height: 100vh;
-    background-image: url(/assets/12.jpg);
+    background-color: transparent;
 }
 
 #as2, #as3, #as4{
     min-height: 95vh;
+    background-color: transparent;
 }
 
 #as2{
-    background-image: url(/assets/13.jpg);
+    
 }
 
 #as3{
-    background-image: url(/assets/11.jpg);
+   
 }
 
 #as4{
-    background-image: url(/assets/11.jpg);
+   
 }
 
 #as5{
     min-height:100vh;
 }
+.as5-cont{
+	margin-left: 10vw;
+	width:80vw;
+	padding-top: 30vh;
+	  z-index:!important;
+}
+.as5-sec{
+	height: 20vh;
+
+}
+.as5-pic{
+	height:80px;
+
+}
+.as5-text{
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	color: black;
+}
+ .as1-u1{
+  margin-top: 15px;
+  width:3.5vw;
+ border-color: #BB5F31;
+  border-width: 2px;
+ }
+
 
 .a-title1, .a-title2, .a-title3, .a-title4{
     font-family: 'Titillium Web', sans-serif;
@@ -475,7 +539,7 @@ min-height: 700px;
   }
 }
 /*Carousel*/
-carousel,
+.carousel,
 .item,
 .active {
     height: 100vh;

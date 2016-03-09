@@ -18,12 +18,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
       <ul class="nav navbar-nav navbar-right" style="padding-top:20px;">
-        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a" %></li>
-        <li class="navlink"><%= link_to 'ABOUT', about_path,:class=>"navlink-a" %></li>
-        <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a" %></li>
-        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a" %></li>
-        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a" %></li>
-        <li class="active"style=" margin:8px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a" %></li>
+        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'ABOUT', about_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="active"style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
 
 
 
