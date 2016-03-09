@@ -6,7 +6,7 @@ class ChurchesController < ApplicationController
   # GET /churches.json
   def index
     if (params['sort'] != nil)
-      @churches = Church.all.order(params['sort'] + " " + params['direction'])
+      @churches = Church.all.order(params['sort'] + " " + params['direction']).order('name ' + params['direction'])
     else
       @churches = Church.all
     end

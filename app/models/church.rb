@@ -11,11 +11,10 @@ class Church < ActiveRecord::Base
 
   searchable do
     text :name, :boost => 5
+    text :location, :stored => true
+    text :architecture, :stored => true
+    text :make, :stored => true
     text :background, :stored => true
-    # text :architecture, :stored => true
-    text :artistic_values, :stored=> true do
-      artistic_values.map(&:description)
-    end
   end
     
 end

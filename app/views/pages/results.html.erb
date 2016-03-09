@@ -9,12 +9,12 @@
   No search query
 <% else %>
 
-  <% if @churches.count == 0 %>
+  <% if @count == 0 %>
     Sorry, we couldn't find what you searched for.
-  <% elsif @churches.count == 1 %>
+  <% elsif @count == 1 %>
     <% @message = 'Found 1 match with the word "'+params['query']+'"' %>
   <% else %>
-    <% @message = 'Found '+@churches.count.to_s+' matches with the word "'+params['query']+'"' %>
+    <% @message = 'Found '+@count.to_s+' matches with the word "'+params['query']+'"' %>
   <% end %>
 
 
@@ -24,21 +24,28 @@
     <table class="table">
       <thead>
         <tr>
-          <td>Name</td>
-          <td>Result</td>
+          <td>Church</td>
+          <td>Results</td>
         </tr>
       </thead>
-
-      <tbody>
-        <% @search.each_hit_with_result do |hit, church| %>
+        <tbody>
+        <% @final_results.group_by{ |key,value| key[0] }.each do |key, values| %>
           <tr>
-            <td><%= link_to church.name, church %></td>
-            <td>"<%= hit.highlight(:background).format { |fragment| content_tag(:strong, fragment) }.html_safe %>"</td>
+            <td><%= link_to Church.find(key[0]).name, church_path(key[0]) %></td>
+            <td>
+              <div><%= values[0][1].html_safe %><div>
+              <% if !values[1].nil? %>
+                <div><%= values[1][1].html_safe %></div>
+              <% end %>
+              <% if !values[2].nil? %>
+                <div><%= values[2][1].html_safe %></div>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
-  </table>
-
+    </table>
+    
   <% end %>
 
 <% end %>
