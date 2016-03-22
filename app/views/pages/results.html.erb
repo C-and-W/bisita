@@ -9,17 +9,21 @@
   No search query
 <% else %>
 
-  <% if @count == 0 %>
+  <% if @results.empty? %>
     Sorry, we couldn't find what you searched for.
-  <% elsif @count == 1 %>
+  <% elsif @results.count == 1 %>
     <% @message = 'Found 1 match with the word "'+params['query']+'"' %>
   <% else %>
-    <% @message = 'Found '+@count.to_s+' matches with the word "'+params['query']+'"' %>
+    <% @message = 'Found '+@results.count.to_s+' matches with the word "'+params['query']+'"' %>
   <% end %>
 
 
   <% if !@message.nil? %>
     <%= @message %><br>
+
+
+
+   
 
     <table class="table">
       <thead>
@@ -28,20 +32,53 @@
           <td>Results</td>
         </tr>
       </thead>
-        <tbody>
-        <% @final_results.group_by{ |key,value| key[0] }.each do |key, values| %>
-          <tr>
-            <td><%= link_to Church.find(key[0]).name, church_path(key[0]) %></td>
-            <td>
-              <div><%= values[0][1].html_safe %><div>
-              <% if !values[1].nil? %>
-                <div><%= values[1][1].html_safe %></div>
-              <% end %>
-              <% if !values[2].nil? %>
-                <div><%= values[2][1].html_safe %></div>
-              <% end %>
-            </td>
-          </tr>
+      <tbody>
+        <% @results.each do |r| %>
+        <tr>
+          <td><%= link_to r.name, church_path(r) %></td>
+          <%
+            highlights = []
+            sql_architecture = ActiveRecord::Base.connection.execute("SELECT ts_headline(architecture,to_tsquery('#{@query}')) FROM churches WHERE id = #{r.id} AND architecture ILIKE '%#{@query}%'")
+            if sql_architecture.count > 0
+              highlights.push("Architecture: "+sql_architecture[0]['ts_headline'])
+            end
+            sql_make = ActiveRecord::Base.connection.execute("SELECT ts_headline(make,to_tsquery('#{@query}')) FROM churches  WHERE id = #{r.id} AND make ILIKE '%#{@query}%'")
+            if sql_make.count > 0
+              highlights.push("Make: "+sql_make[0]['ts_headline'])
+            end
+            sql_background = ActiveRecord::Base.connection.execute("SELECT ts_headline(background,to_tsquery('#{@query}')) FROM churches  WHERE id = #{r.id} AND background ILIKE '%#{@query}%'")
+            if sql_background.count > 0
+              highlights.push('"'+sql_background[0]['ts_headline']+'"')
+            end
+            sql_artistic_value = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,to_tsquery('#{@query}')) FROM artistic_values WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
+            if sql_artistic_value.count > 0
+              sql_artistic_value.each do |artistic_value|
+                highlights.push('"'+artistic_value['ts_headline']+'"')
+              end
+            end
+            sql_fact = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,to_tsquery('#{@query}')) FROM facts WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
+            if sql_fact.count > 0
+              sql_fact.each do |fact|
+                highlights.push('"'+fact['ts_headline']+'"')
+              end
+            end
+            sql_timeline_point = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,to_tsquery('#{@query}')) FROM timeline_points WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
+            if sql_timeline_point.count > 0
+              sql_timeline_point.each do |timeline_point|
+                highlights.push('"'+timeline_point['ts_headline']+'"')
+              end
+            end
+          %>
+          <td>
+            <div><%= highlights[0].html_safe %><div>
+            <% if !highlights[1].nil? %>
+              <div><%= highlights[1].html_safe %></div>
+            <% end %>
+            <% if !highlights[2].nil? %>
+              <div><%= highlights[2].html_safe %></div>
+            <% end %>
+          </td>
+        </tr>
         <% end %>
       </tbody>
     </table>

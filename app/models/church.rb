@@ -9,12 +9,9 @@ class Church < ActiveRecord::Base
   accepts_nested_attributes_for :timeline_points, :allow_destroy => true
   accepts_nested_attributes_for :travel_times, :allow_destroy => true
 
-  searchable do
-    text :name, :boost => 5
-    text :location, :stored => true
-    text :architecture, :stored => true
-    text :make, :stored => true
-    text :background, :stored => true
-  end
+  include PgSearch
+  pg_search_scope :search, :against => {:name => 'A', :location => 'C', :architecture => 'B', :make => 'B', :background => 'D'}, 
+      :associated_against => {:artistic_values => [:description], :facts => [:description], :timeline_points => [:description]}
+      #,:using => {:tsearch => {:start_sel => '<b>', :stop_sel => '</b>'}}
     
 end

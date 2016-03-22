@@ -27,14 +27,6 @@ Things you may want to cover:
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
-DEVELOPMENT STAGE(for search to work)
-  - need to install java runtime environment
-  - bundle install
-  - then in terminal type "bundle exec rake sunspot:solr:start"
-  - then open another terminal tab then type rake db:setup. then rails s
-
-PRODUCTION STAGE
-  - idk pa hehehe
 
 -----------------------------------------
 
@@ -42,15 +34,10 @@ convert lat lon to decimal
 majayjay date nilagay ko na lang na isa kasi need na int for sorting
 sa search, yung x results found. yung x = number of churches found not number of matching words
 
-
-https://github.com/sunspot/sunspot/wiki/Adding-Sunspot-search-to-Rails-in-5-minutes-or-less
-idk how to sunspot solr yet in production
-autocommit, reindex
-s
-http://stackoverflow.com/questions/7161499/how-highlight-found-word-with-sunspot
-
-bundle exec rake sunspot:solr:start # or sunspot:solr:run to start in foreground
-
 ayusin format resultss
 
 fix arrangement of results (mauna siguro make etc)
+
+--------------------------------
+
+SEARCH: need postgres for it to work
