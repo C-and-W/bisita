@@ -28,6 +28,7 @@ gem 'twitter-bootstrap-rails'
 gem 'nested_form'
 gem 'simple_form'
 gem 'sunspot_rails'
+#gem 'pg_search'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
