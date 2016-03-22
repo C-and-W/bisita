@@ -565,3 +565,83 @@ min-height: 700px;
     background-size: cover;
     -o-background-size: cover;
 }
+
+
+/* SUGGEST */
+
+#suggest_form {
+
+  input {
+    visibility:hidden;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  input:checked + label {
+    color: red;
+  }  
+}
+
+#sgs1, #sgs2 {
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#sgs1{
+    height: 100vh;
+    background-image: url(/assets/38.jpg);
+}
+
+.sg-title1, .sg-title2{
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+}
+
+.sg-td1{
+    padding-top: 30vh;
+}
+
+.sg-title1{
+    font-weight: 900;
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+
+.sg-title2{
+    font-weight: 900;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.sg-td3{
+    padding-top: 35px;
+}
+
+#sgs2{
+  height: 100vh;
+}
+
+.sg-td4{
+  margin-top: 15vh;
+ }
+
+.sg-title4{
+  font-family: 'Titillium Web', sans-serif;
+  color: black;
+  font-weight: 600;
+  font-size: 27px;
+  letter-spacing: 3px;
+}
+
+.sg-rlink{
+  min-height: 50px;
+  color:#9e9e9e;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 18px;
+ }

@@ -33,6 +33,13 @@ class PagesController < ApplicationController
   def suggest
   end
 
+  def submit
+    @church = params['radio_church']
+    @category = params['radio_category']
+    @suggestion = params['suggestion']
+    ActiveRecord::Base.connection.execute("INSERT INTO suggestions (church,category,suggestion) VALUES ('#{@church}','#{@category}','#{@suggestion}')")
+  end
+
   private
     def set_query
       @query = params['query']

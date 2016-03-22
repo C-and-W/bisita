@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about', as: :about
   get '/contact', to: 'pages#contact', as: :contact
   get '/suggest', to: 'pages#suggest', as: :suggest
+  get '/submit', to: 'pages#submit', as: :submit
   get '/search', to: 'pages#search', as: :search
   get '/results', to: 'pages#results', as: :results
   resources :churches, except: [:new, :edit]
