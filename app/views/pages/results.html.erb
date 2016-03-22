@@ -38,31 +38,31 @@
           <td><%= link_to r.name, church_path(r) %></td>
           <%
             highlights = []
-            sql_architecture = ActiveRecord::Base.connection.execute("SELECT ts_headline(architecture,to_tsquery('#{@query}')) FROM churches WHERE id = #{r.id} AND architecture ILIKE '%#{@query}%'")
+            sql_architecture = ActiveRecord::Base.connection.execute("SELECT ts_headline(architecture,plainto_tsquery('#{@query}')) FROM churches WHERE id = #{r.id} AND architecture ILIKE '%#{@query}%'")
             if sql_architecture.count > 0
               highlights.push("Architecture: "+sql_architecture[0]['ts_headline'])
             end
-            sql_make = ActiveRecord::Base.connection.execute("SELECT ts_headline(make,to_tsquery('#{@query}')) FROM churches  WHERE id = #{r.id} AND make ILIKE '%#{@query}%'")
+            sql_make = ActiveRecord::Base.connection.execute("SELECT ts_headline(make,plainto_tsquery('#{@query}')) FROM churches  WHERE id = #{r.id} AND make ILIKE '%#{@query}%'")
             if sql_make.count > 0
               highlights.push("Make: "+sql_make[0]['ts_headline'])
             end
-            sql_background = ActiveRecord::Base.connection.execute("SELECT ts_headline(background,to_tsquery('#{@query}')) FROM churches  WHERE id = #{r.id} AND background ILIKE '%#{@query}%'")
+            sql_background = ActiveRecord::Base.connection.execute("SELECT ts_headline(background, plainto_tsquery('#{@query}')) FROM churches  WHERE id = #{r.id} AND background ILIKE '%#{@query}%'")
             if sql_background.count > 0
               highlights.push('"'+sql_background[0]['ts_headline']+'"')
             end
-            sql_artistic_value = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,to_tsquery('#{@query}')) FROM artistic_values WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
+            sql_artistic_value = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,plainto_tsquery('#{@query}')) FROM artistic_values WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
             if sql_artistic_value.count > 0
               sql_artistic_value.each do |artistic_value|
                 highlights.push('"'+artistic_value['ts_headline']+'"')
               end
             end
-            sql_fact = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,to_tsquery('#{@query}')) FROM facts WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
+            sql_fact = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,plainto_tsquery('#{@query}')) FROM facts WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
             if sql_fact.count > 0
               sql_fact.each do |fact|
                 highlights.push('"'+fact['ts_headline']+'"')
               end
             end
-            sql_timeline_point = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,to_tsquery('#{@query}')) FROM timeline_points WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
+            sql_timeline_point = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,plainto_tsquery('#{@query}')) FROM timeline_points WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
             if sql_timeline_point.count > 0
               sql_timeline_point.each do |timeline_point|
                 highlights.push('"'+timeline_point['ts_headline']+'"')
