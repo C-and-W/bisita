@@ -1,64 +1,100 @@
-<h1>Results</h1>
+<!DOCTYPE html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+<nav class="navbar navbar-default navbar-fixed-top navbar-noscroll" style="background-color:transparent; height:100px; padding:none; border-color:transparent; border:none;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%=image_tag "Logo-White-01.png", :style => "width: 90%; margin-top:0px; margin-left:5vw;"%></a>
+    </div>
 
-<form action="/results">
-  <input name="query">
-  <input type="submit" value="Submit" class="hide"/>
-</form>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
+      <ul class="nav navbar-nav navbar-right" style="padding-top:20px;">
+        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'ABOUT', about_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
 
-<% if params['query'] == "" || params['query'].strip.empty? %>
-  No search query
-<% else %>
+      </ul>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+</head>
+<body id="body_home">
 
-  <% if @results.empty? %>
-    Sorry, we couldn't find what you searched for.
-  <% elsif @results.count == 1 %>
-    <% @message = 'Found 1 match with the word "'+params['query']+'"' %>
+  <% if params['query'] == "" || params['query'].strip.empty? %>
+     <% @message = "No search query." %> 
   <% else %>
-    <% @message = 'Found '+@results.count.to_s+' matches with the word "'+params['query']+'"' %>
+
+    <% if @results.empty? %>
+      <% @message = "Sorry, we couldn't find what you searched for." %>
+    <% elsif @results.count == 1 %>
+      <% @message = 'Found 1 match with the word "'+params['query']+'"' %>
+    <% else %>
+      <% @message = 'Found '+@results.count.to_s+' matches with the word "'+params['query']+'"' %>
+    <% end %>
+
   <% end %>
 
+  <div id="r-form">
+    <form action="/results">
+      <div class="row">
+        <div class="col-md-2"><input name="query" class="r-search"></div>
+        <div id="r-message" class="col-md-10">
+          <% if !@message.nil? %>
+            <%= @message %>
+          <% end %>
+        </div>
+      </div>
+      <input type="submit" value="Submit" class="hide"/>
+    </form>
+  </div>
 
-  <% if !@message.nil? %>
-    <%= @message %><br>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <td>Church</td>
-          <td>Results</td>
-        </tr>
-      </thead>
+  <% if !@results.empty? %>
+
+    <table class="table r-table">
       <tbody>
         <% @results.each do |r| %>
         <tr>
-          <td><%= link_to r.name, church_path(r) %></td>
+          <td><%= image_tag "thumbnailchurch"+r.id.to_s+".jpg", :class=>"r-pic" %></td>
           <%
             highlights = []
-            sql_architecture = ActiveRecord::Base.connection.execute("SELECT ts_headline(architecture,plainto_tsquery('#{@query}')) FROM churches WHERE id = #{r.id} AND architecture ILIKE '%#{@query}%'")
+            sql_architecture = ActiveRecord::Base.connection.execute("SELECT ts_headline(architecture,plainto_tsquery('#{@query}'), 'startsel=''<span class=\"r-highlight\">'' stopsel=</span>') FROM churches WHERE id = #{r.id} AND architecture ILIKE '%#{@query}%'")
             if sql_architecture.count > 0
               highlights.push("Architecture: "+sql_architecture[0]['ts_headline'])
             end
-            sql_make = ActiveRecord::Base.connection.execute("SELECT ts_headline(make,plainto_tsquery('#{@query}')) FROM churches  WHERE id = #{r.id} AND make ILIKE '%#{@query}%'")
+            sql_make = ActiveRecord::Base.connection.execute("SELECT ts_headline(make,plainto_tsquery('#{@query}'), 'startsel=''<span class=\"r-highlight\">'' stopsel=</span>') FROM churches  WHERE id = #{r.id} AND make ILIKE '%#{@query}%'")
             if sql_make.count > 0
               highlights.push("Make/Composition: "+sql_make[0]['ts_headline'])
             end
-            sql_background = ActiveRecord::Base.connection.execute("SELECT ts_headline(background, plainto_tsquery('#{@query}')) FROM churches  WHERE id = #{r.id} AND background ILIKE '%#{@query}%'")
+            sql_background = ActiveRecord::Base.connection.execute("SELECT ts_headline(background, plainto_tsquery('#{@query}'), 'startsel=''<span class=\"r-highlight\">'' stopsel=</span>') FROM churches  WHERE id = #{r.id} AND background ILIKE '%#{@query}%'")
             if sql_background.count > 0
               highlights.push('"...'+sql_background[0]['ts_headline']+'..."')
             end
-            sql_artistic_value = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,plainto_tsquery('#{@query}')) FROM artistic_values WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
+            sql_artistic_value = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,plainto_tsquery('#{@query}'), 'startsel=''<span class=\"r-highlight\">'' stopsel=</span>') FROM artistic_values WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
             if sql_artistic_value.count > 0
               sql_artistic_value.each do |artistic_value|
                 highlights.push('"...'+artistic_value['ts_headline']+'..."')
               end
             end
-            sql_fact = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,plainto_tsquery('#{@query}')) FROM facts WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
+            sql_fact = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,plainto_tsquery('#{@query}'), 'startsel=''<span class=\"r-highlight\">'' stopsel=</span>') FROM facts WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
             if sql_fact.count > 0
               sql_fact.each do |fact|
                 highlights.push('"...'+fact['ts_headline']+'..."')
               end
             end
-            sql_timeline_point = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,plainto_tsquery('#{@query}')) FROM timeline_points WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
+            sql_timeline_point = ActiveRecord::Base.connection.execute("SELECT ts_headline(description,plainto_tsquery('#{@query}'), 'startsel=''<span class=\"r-highlight\">'' stopsel=</span>') FROM timeline_points WHERE church_id = #{r.id} AND description ILIKE '%#{@query}%' LIMIT 1")
             if sql_timeline_point.count > 0
               sql_timeline_point.each do |timeline_point|
                 highlights.push('"...'+timeline_point['ts_headline']+'..."')
@@ -66,19 +102,20 @@
             end
           %>
           <td>
-            <div><%= highlights[0].html_safe %><div>
+            <div class="r-td"><%= highlights[0].html_safe %></div>
             <% if !highlights[1].nil? %>
-              <div><%= highlights[1].html_safe %></div>
+              <div class="r-td r-td2"><%= highlights[1].html_safe %></div>
             <% end %>
             <% if !highlights[2].nil? %>
-              <div><%= highlights[2].html_safe %></div>
+              <div class="r-td r-td2"><%= highlights[2].html_safe %></div>
             <% end %>
+            <div class="r-td2"><%= link_to "VIEW MORE", church_path(r), :class=>"r-view" %></div>
           </td>
         </tr>
         <% end %>
       </tbody>
     </table>
-    
+      
   <% end %>
 
-<% end %>
+</body>
