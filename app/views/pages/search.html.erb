@@ -1,47 +1,89 @@
-<h1>Search</h1>
+<!DOCTYPE html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color:transparent; height:100px; padding:none; border-color:transparent; border:none;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%=image_tag "Logo-White-01.png", :style => "width: 90%; margin-top:0px; margin-left:5vw;"%></a>
+    </div>
 
-<form action="/search">
-  <input name="query">
-  <input type="submit" value="Submit" class="hide"/>
-</form>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
+      <ul class="nav navbar-nav navbar-right" style="padding-top:20px;">
+        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'ABOUT', about_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
 
-<% if !@message.nil? %>
-  <%= @message %><br>
-<% end %>
+        <!-- LINKS NOT WORKING IF U USE NAVLINK ACTIVE -->
 
-Search suggestions:<br>
+      </ul>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+</head>
+<body id="body_home">
+  <section id="srs1">
+
+<br><br><br><br><br><br><br>
+
+  <form action="/search">
+    <div id="sr-box"><center><input name="query"></center></div>
+    <input type="submit" value="Submit" class="hide"/>
+  </form>
+
+  <% if !@message.nil? %>
+    <div id="sr-message"><center><%= @message %></center></div>
+  <% end %>
+
+  <div id="sr-td1"><center>Search suggestions:</center></div>
 
 
-<table class="table">
-  <tr>
-    <td><%= link_to "Adobe", search_path(:query => "Adobe") %></td>
-    <td><%= link_to "Latin-American", search_path(:query => "Latin-American") %></td>
-    <td><%= link_to "Romanesque", search_path(:query => "Romanesque") %></td>
-  </tr>
-  <tr>
-    <td><%= link_to "Architecture", search_path(:query => "Architecture") %></td>
-    <td><%= link_to "Nave", search_path(:query => "Nave") %></td>
-    <td><%= link_to "Ruins", search_path(:query => "Ruins") %></td>
-  </tr>
-  <tr>
-    <td><%= link_to "Baroque", search_path(:query => "Baroque") %></td>
-    <td><%= link_to "The Nativity", search_path(:query => "The Nativity") %></td>
-    <td><%= link_to "Sistine Chapel", search_path(:query => "Sistine Chapel") %></td>
-  </tr>
-  <tr>
-    <td><%= link_to "Bricks", search_path(:query => "Bricks") %></td>
-    <td><%= link_to "Ornament", search_path(:query => "Ornament") %></td>
-    <td><%= link_to "Spire", search_path(:query => "Spire") %></td>
-  </tr>
-  <tr>
-    <td><%= link_to "Calasiao", search_path(:query => "Calasiao") %></td>
-    <td><%= link_to "Painting", search_path(:query => "Painting") %></td>
-    <td><%= link_to "Style", search_path(:query => "Style") %></td>
-  </tr>
-  <tr>
-    <td><%= link_to "Cathedral", search_path(:query => "Cathedral") %></td>
-    <td><%= link_to "Rebellion", search_path(:query => "Rebellion") %></td>
-    <td><%= link_to "Tanay Church", search_path(:query => "Tanay Church") %></td>
-  </tr>
-</table>
+<div class="container sr-options">
+  <div class="row">
+    <div class="col-md-4 sr-link"><center><%= link_to "Adobe", search_path(:query => "Adobe"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Latin-American", search_path(:query => "Latin-American"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Romanesque", search_path(:query => "Romanesque"), :class=>"sr-link2" %></center></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 sr-link"><center><%= link_to "Architecture", search_path(:query => "Architecture"), :class=>"sr-link2" %></center></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Nave", search_path(:query => "Nave"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Ruins", search_path(:query => "Ruins"), :class=>"sr-link2" %></center></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 sr-link"><center><%= link_to "Baroque", search_path(:query => "Baroque"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "The Nativity", search_path(:query => "The Nativity"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Sistine Chapel", search_path(:query => "Sistine Chapel"), :class=>"sr-link2" %></center></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 sr-link"><center><%= link_to "Bricks", search_path(:query => "Bricks"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Ornament", search_path(:query => "Ornament"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Spire", search_path(:query => "Spire"), :class=>"sr-link2" %></center></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 sr-link"><center><%= link_to "Calasiao", search_path(:query => "Calasiao"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Painting", search_path(:query => "Painting"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Style", search_path(:query => "Style"), :class=>"sr-link2" %></center></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 sr-link"><center><%= link_to "Cathedral", search_path(:query => "Cathedral"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Rebellion", search_path(:query => "Rebellion"), :class=>"sr-link2" %></center></div>
+    <div class="col-md-4 sr-link"><center><%= link_to "Tanay Church", search_path(:query => "Tanay Church"), :class=>"sr-link2" %></center></div>
+  </div>
+</div>
+
+
+  </section>
+</body>
+
 

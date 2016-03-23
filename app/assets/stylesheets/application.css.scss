@@ -661,3 +661,59 @@ min-height: 700px;
  .d-pic{
   height: 100px;
  }
+
+
+ /* SEARCH */
+
+ #srs1 {
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#srs1{
+    height: 100vh;
+    background-image: url(/assets/33.jpg);
+}
+
+#sr-td1, .sr-link, #sr-message{
+  min-height: 50px;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+#sr-td1{
+  color: white;
+  font-size: 15px;
+  font-size: 18px;
+  margin-top: 5vh;
+}
+
+.sr-link{
+  font-size: 18px;
+ }
+
+.sr-link2{
+  color:white;
+}
+
+.sr-link2:hover{
+  color:black;
+  text-decoration: none;
+}
+
+#sr-message{
+  color: black;
+  font-size: 18px;
+  margin-top: 7vh;
+}
+
+.sr-options{
+  margin-top: 3vh;
+}
+
+#sr-box{
+  margin-top: 10vh;
+}
