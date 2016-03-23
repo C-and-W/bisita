@@ -13,7 +13,7 @@ default: &default
 
 development:
   <<: *default
-  #database: db/development.sqlite3
+  #Sdatabase: db/development.sqlite3
   database: bisitapg
   host: localhost
   username: pguser
