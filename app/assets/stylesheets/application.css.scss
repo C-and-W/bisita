@@ -496,6 +496,25 @@ min-height: 700px;
      background-position: center; 
  }
 
+ #dis1{
+    min-height: 70vh;
+    background-color: transparent;
+ }
+ .dis1-td1 {
+    padding-top: 20.5vh; /* 325px */
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color:white;
+}
+.dis1-arr{
+	margin-left: 20vw;
+	font-size: 17px;
+}
+.dis1-td1 a{
+	color:white!important;
+}
+
 /*CD TOP*/
 .cd-top {
   z-index:11000;
