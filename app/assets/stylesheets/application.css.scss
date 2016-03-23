@@ -690,7 +690,10 @@ min-height: 700px;
  /* DISCOVER */
 
  .d-pic{
-  height: 100px;
+  height: 50vh;
+  width: 100%;
+  display: block;
+  object-fit: cover;
  }
 
 

@@ -45,34 +45,18 @@
 <%= sortable "artistic_value", "Amount of Artistic Value" %></center></div>
   </section>
 
-<section>
-<table class="table">
-  <thead>
-    <tr>
-      <td>Picture</td>
-      <td>Name</td>
-      <td>Date</td>
-      <td>Architecture</td>
-      <td>Make/Composition</td>
-      <td>Distance from Manila</td>
-      <td>Region</td>
-    </tr>
-  </thead>
+<section class="container-fluid" style="min-height:100vh; padding-top:4vh;">
 
-  <tbody>
+
+<div class="row" style="margin-left:3px; margin-right:3px;">
     <% @churches.each do |church| %>
-      <tr>
-        <td><%= image_tag "thumbnailchurch"+church.id.to_s+".jpg", :class=>"d-pic" %></td>
-        <td><%= link_to church.name, church %></td>
-        <td><%= church.year %></td>
-        <td><%= church.architecture %></td>
-        <td><%= church.make %></td>
-        <td><%= church.distance %> km</td>
-        <td><%= church.region %></td>
-      </tr>
+        <div class="col-md-6">
+
+        <%= link_to "#{image_tag("thumbnailchurch"+church.id.to_s+".jpg", :class=>"d-pic image-responsive")}".html_safe, church %></tr>
+        </div>
     <% end %>
-  </tbody>
-</table>
+<div>
+
 
 </section>
 <section id="ab6">
