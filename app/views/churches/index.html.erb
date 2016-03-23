@@ -52,7 +52,7 @@
     <% @churches.each do |church| %>
         <div class="col-md-6">
           <div class="d-pic" style="height: 53vh; background-image:url(/assets/thumbnailchurch<%=church.id.to_s%>.jpg); background-size:cover; display:block;">
-          <%=church.name%>
+          <div class="d-pic-text"><center><%=church.name.upcase %>,<br><%= church.location.upcase  %></center></div>
           </div>  
         </div>
     <% end %>

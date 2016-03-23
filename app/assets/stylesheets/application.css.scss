@@ -703,15 +703,28 @@ min-height: 700px;
  /* DISCOVER */
 
  .d-pic{
-
+  padding-top: 20%;
+  transition: all 0.3s ease-in-out;
   background-position: center;
-  filter: grayscale(100%);
+   filter: gray; /* IE6-9 */
+  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
  }
  .d-pic:hover{
-  
-  filter: grayscale(100%);
+   filter: none;
+  -webkit-filter: grayscale(0);
  }
-
+ .d-pic-text{
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+  font-weight: 900;
+  font-size: 27px;
+  letter-spacing: 3px;
+  display:none;
+ }
+ .d-pic:hover .d-pic-text{
+ 	display:block;
+ }
 
  /* SEARCH */
 
