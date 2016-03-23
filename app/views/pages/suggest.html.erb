@@ -156,7 +156,7 @@
     <div>
       <center><textarea name="suggestion" rows="20" cols="55" style="resize:none; background-color:#9e9e9e"></textarea></center>
 
-      <center><input type="image" src="/assets/Check-02.png" alt="Submit" class="sg-pic"></center>
+      <center><input type="image" src="/assets/Check-03.png" alt="Submit" class="sg-pic" onmouseover="hover(this);" onmouseout="unhover(this);"></center>
     </div>
 
     </form>
@@ -164,9 +164,18 @@
   </section>
 
 
-
-
 </body>
+
+<script>
+function hover(element) {
+    element.setAttribute('src', '/assets/Check-02.png');
+    element.setAttribute('style','background-color: #9e9e9e;')
+}
+function unhover(element) {
+    element.setAttribute('src', '/assets/Check-03.png');
+    element.setAttribute('style','background-color: transparent')
+}
+</script>
 
 
 

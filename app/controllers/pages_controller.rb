@@ -35,10 +35,12 @@ class PagesController < ApplicationController
   end
 
   def submit
-    @church = params['radio_church']
-    @category = params['radio_category']
-    @suggestion = params['suggestion']
-    ActiveRecord::Base.connection.execute("INSERT INTO suggestions (church,category,suggestion) VALUES ('#{@church}','#{@category}','#{@suggestion}')")
+    if params['radio_church'].present? && params['radio_category'].present? && params['suggestion'].present?
+      @church = params['radio_church']
+      @category = params['radio_category']
+      @suggestion = params['suggestion']
+      ActiveRecord::Base.connection.execute("INSERT INTO suggestions (church,category,suggestion) VALUES ('#{@church}','#{@category}','#{@suggestion}')")
+    end
   end
 
   private

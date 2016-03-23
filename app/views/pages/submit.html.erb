@@ -1,4 +1,42 @@
-THANK YOU!<br>
+<!DOCTYPE html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+<nav class="navbar navbar-default navbar-fixed-top navbar-noscroll" style="background-color:transparent; height:100px; padding:none; border-color:transparent; border:none;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%=image_tag "Logo-White-01.png", :style => "width: 90%; margin-top:0px; margin-left:5vw;"%></a>
+    </div>
 
-YOU HAVE SUCCESSFULLY<br>
-CONTRIBUTED TO BISITA.
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
+      <ul class="nav navbar-nav navbar-right" style="padding-top:20px;">
+        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'ABOUT', about_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink active"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+
+
+
+      </ul>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+</head>
+<body id="body_home">
+
+  <section id="sbs1">
+    <div id="sb-td1"><center><span class="sb-title1">THANK YOU!</span></center></div>
+    <div id="sb-td2"><center><span class="sb-title1">YOU HAVE SUCCESSFULLY<br>CONTRIBUTED TO BISITA.</span></center></div>
+  </section>
+
+</body>

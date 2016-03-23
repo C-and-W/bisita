@@ -220,6 +220,10 @@ padding-top: 30vh;
   background-color: #BB5F31!important;
 }
 
+.navbar-noscroll {
+  background-color: #BB5F31!important;
+}
+
  .navbar-default .navbar-nav > li > a {
    border-bottom: solid transparent 2px;
    padding-bottom: 2px!important;
@@ -392,6 +396,16 @@ min-height: 700px;
 .c-td3{
     padding-top: 25px;
 }
+
+.c-link{
+  color:white;
+}
+
+.c-link:hover{
+  text-decoration:none;
+  color:white;
+}
+
 
 /* ABOUT */
 
@@ -683,7 +697,6 @@ min-height: 700px;
  }
 
  .sg-pic{
-  background-color: #9e9e9e;
   height: 50px;
  }
 
@@ -760,4 +773,79 @@ min-height: 700px;
   height: 50px;
   border: none;
   opacity: 0.4;
+}
+
+/* RESULTS */
+
+#r-form{
+  margin-top: 15vh;
+}
+
+.r-search{
+  background-color:#9e9e9e;
+  border: none;
+  width: 200px;
+  height: 30px;
+  color: white;
+}
+
+#r-message, .r-view, .r-td, .r-search{
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+#r-message, .r-view, .r-td{
+  color:black;
+}
+
+.r-pic{
+  height: 300px;
+}
+
+.r-view:hover{
+  color:black;
+  text-decoration: none;
+}
+
+.r-highlight{
+  color:#d6b34a;
+}
+
+.r-td2{
+  margin-top: 1.5vh;
+}
+
+.r-table th, .r-table td { 
+     border-top: none !important; 
+ }
+
+ /* SUBMIT */
+
+ #sbs1 {
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#sbs1{
+    height: 100vh;
+}
+
+.sb-title1{
+  color:#d6b34a;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 900;
+  font-size: 35px;
+  letter-spacing: 6px;
+}
+
+#sb-td1{
+  padding-top: 40vh;
+}
+
+#sb-td2{
+  padding-top:5vh;
 }
