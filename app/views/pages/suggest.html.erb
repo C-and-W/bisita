@@ -1,121 +1,169 @@
+<!DOCTYPE html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color:transparent; height:100px; padding:none; border-color:transparent; border:none;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%=image_tag "Logo-White-01.png", :style => "width: 90%; margin-top:0px; margin-left:5vw;"%></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
+      <ul class="nav navbar-nav navbar-right" style="padding-top:20px;">
+        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'ABOUT', about_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+
+        <!-- FORM NOT WORKING IF U USE NAVLINK ACTIVE -->
+
+
+      </ul>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+</head>
 
 <body id="body_home">
 
-  <form id="suggest_form" action="/submit">
+  <section id="sgs1">
+    <div class="sg-td1"><center><span class="sg-title1">SOMETHING MISSING?</span></center></div>
+    <div class="sg-td2"><center><span class="sg-title1">INACCURATE INFORMATION?</span></center></div>
+    <div class="sg-td3"><center><span class="sg-title2">Suggest missing or the right information.</span></center></div>
+    <div class="sg-td3"><center><span class="sg-title2">Contribute and help be part of the growth of Bisita.</span></center></div>
+  </section>
 
   <section id="sgs2">
-  <!--BLANK-->
+  
+    <form id="suggest_form" action="/submit">
+
+
     <div class="sg-td4"><center><span class="sg-title4">CHOOSE A CHURCH TO<br> CONTRIBUTE TO:</span></center></div>
     <hr id="hs2-u1">
     
     <div class="container options">
-    <div class="row">
-      <div class="col-md-6 sg-rlink"><center>
-        <input type='radio' value='Betis Church' name='radio_church' id='radio_betis'/>
-        <label for='radio_betis'>BETIS CHURCH</label>
-      </center></div>
-      <div class="col-md-6 sg-rlink"><center>
-        <input type='radio' value='Calasiao Church' name='radio_church' id='radio_calasiao'/>
-        <label for='radio_calasiao'>CALASIAO CHURCH</label>
-      </center></div>
+      <div class="row">
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Betis Church' name='radio_church' id='radio_betis'/>
+          <label for='radio_betis'>BETIS CHURCH</label>
+        </center></div>
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Calasiao Church' name='radio_church' id='radio_calasiao'/>
+          <label for='radio_calasiao'>CALASIAO CHURCH</label>
+        </center></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Majayjay Church' name='radio_church' id='radio_majayjay'/>
+          <label for='radio_majayjay'>MAJAYJAY CHURCH</label>
+        </center></div>
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Minalin Church' name='radio_church' id='radio_minalin'/>
+          <label for='radio_minalin'>MINALIN CHURCH</label>
+        </center></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Malaueg Church' name='radio_church' id='radio_malaueg'/>
+          <label for='radio_malaueg'>MALAUEG CHURCH</label>
+        </center></div>
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Santa Ana Church' name='radio_church' id='radio_santa_ana'/>
+          <label for='radio_santa_ana'>SANTA ANA CHURCH</label>
+        </center></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Tanay Church' name='radio_church' id='radio_tanay'/>
+          <label for='radio_tanay'>TANAY CHURCH</label>
+        </center></div>
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Tayabas Church' name='radio_church' id='radio_tayabas'/>
+          <label for='radio_tayabas'>TAYABAS CHURCH</label>
+        </center></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Tuguegarao Church' name='radio_church' id='radio_tuguegarao'/>
+          <label for='radio_tuguegarao'>TUGUEGARAO CHURCH</label>
+        </center></div>
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Tumauini Church' name='radio_church' id='radio_tumauini'/>
+          <label for='radio_tumauini'>TUMAUINI CHURCH</label>
+        </center></div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-md-6 sg-rlink"><center>
-        <input type='radio' value='Majayjay Church' name='radio_church' id='radio_majayjay'/>
-        <label for='radio_majayjay'>MAJAYJAY CHURCH</label>
-      </center></div>
-      <div class="col-md-6 sg-rlink"><center>
-        <input type='radio' value='Minalin Church' name='radio_church' id='radio_minalin'/>
-        <label for='radio_minalin'>MINALIN CHURCH</label>
-      </center></div>
+
+    <div class="sg-td5"><center><span class="sg-title4">CHOOSE WHICH CATEGORY:</span></center></div>
+    <hr id="hs2-u1">
+
+    <div class="container options">
+      <div class="row">
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Year' name='radio_category' id='radio_year'/>
+          <label for='radio_year'>YEAR</label>
+        </center></div>
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Architecture' name='radio_category' id='radio_architecture'/>
+          <label for='radio_architecture'>ARCHITECTURE</label>
+        </center></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Make/Composition' name='radio_category' id='radio_make'/>
+          <label for='radio_make'>MAKE/COMPOSITION</label>
+        </center></div>
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Region' name='radio_category' id='radio_region'/>
+          <label for='radio_region'>REGION</label>
+        </center></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Travel Time From Manila' name='radio_category' id='radio_travel'/>
+          <label for='radio_travel'>TRAVEL TIME FROM MANILA</label>
+        </center></div>
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Historical Background' name='radio_category' id='radio_background'/>
+          <label for='radio_background'>HISTORICAL BACKGROUND</label>
+        </center></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Timeline' name='radio_category' id='radio_timeline'/>
+          <label for='radio_timeline'>TIMELINE</label>
+        </center></div>
+        <div class="col-md-6 sg-rlink"><center>
+          <input type='radio' value='Artistic Value' name='radio_category' id='radio_artistic_value'/>
+          <label for='radio_artistic_value'>ARTISTIC VALUE</label>
+        </center></div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-md-6 sg-rlink"><center>
-        <input type='radio' value='Malaueg Church' name='radio_church' id='radio_malaueg'/>
-        <label for='radio_malaueg'>MALAUEG CHURCH</label>
-      </center></div>
-      <div class="col-md-6 sg-rlink"><center>
-        <input type='radio' value='Santa Ana Church' name='radio_church' id='radio_santa_ana'/>
-        <label for='radio_santa_ana'>SANTA ANA CHURCH</label>
-      </center></div>
+
+    <div class="sg-td5"><center><span class="sg-title4">SUGGESTION/S:</span></center></div>
+    <hr id="hs2-u1">
+
+    <div>
+      <center><textarea name="suggestion" rows="20" cols="55" style="resize:none; background-color:#9e9e9e"></textarea></center>
+
+      <center><input type="image" src="/assets/Check-02.png" alt="Submit" class="sg-pic"></center>
     </div>
-    <div class="row">
-      <div class="col-md-6 sg-rlink"><center>
-        <input type='radio' value='Tanay Church' name='radio_church' id='radio_tanay'/>
-        <label for='radio_tanay'>TANAY CHURCH</label>
-      </center></div>
-      <div class="col-md-6 sg-rlink"><center>
-        <input type='radio' value='Tayabas Church' name='radio_church' id='radio_tayabas'/>
-        <label for='radio_tayabas'>TAYABAS CHURCH</label>
-      </center></div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 sg-rlink"><center>
-        <input type='radio' value='Tuguegarao Church' name='radio_church' id='radio_tuguegarao'/>
-        <label for='radio_tuguegarao'>TUGUEGARAO CHURCH</label>
-      </center></div>
-      <div class="col-md-6 sg-rlink"><center>
-        <input type='radio' value='Tumauini Church' name='radio_church' id='radio_tumauini'/>
-        <label for='radio_tumauini'>TUMAUINI CHURCH</label>
-      </center></div>
-    </div>
-  </div>
+
+    </form>
 
   </section>
 
 
-
-<h2>Choose which category:</h2>
-<table class="table">
-  <tr>
-    <td>
-      <input type='radio' value='Year' name='radio_category' id='radio_year'/>
-      <label for='radio_year'>Year</label>
-    </td>
-    <td>
-      <input type='radio' value='Architecture' name='radio_category' id='radio_architecture'/>
-      <label for='radio_architecture'>Architecture</label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <input type='radio' value='Make/Composition' name='radio_category' id='radio_make'/>
-      <label for='radio_make'>Make/Composition</label>
-    </td>
-    <td>
-      <input type='radio' value='Region' name='radio_category' id='radio_region'/>
-      <label for='radio_region'>Region</label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <input type='radio' value='Travel Time From Manila' name='radio_category' id='radio_travel'/>
-      <label for='radio_travel'>Travel Time From Manila</label>
-    </td>
-    <td>
-      <input type='radio' value='Historical Background' name='radio_category' id='radio_background'/>
-      <label for='radio_background'>Historical Background</label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <input type='radio' value='Timeline' name='radio_category' id='radio_timeline'/>
-      <label for='radio_timeline'>Timeline</label>
-    </td>
-    <td>
-      <input type='radio' value='Artistic Value' name='radio_category' id='radio_artistic_value'/>
-      <label for='radio_artistic_value'>Artistic Value</label>
-    </td>
-  </tr>
-</table>
-
-<h2>Suggestion/s:</h2>
-<textarea name="suggestion" rows="4" cols="50" style="resize:none;"></textarea>
-
-<br>
-<input type="submit" value="Submit">
-
-</form>
 
 
 </body>

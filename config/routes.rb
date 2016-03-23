@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get '/results', to: 'pages#results', as: :results
   resources :churches, except: [:new, :edit]
 
-  get '/try', to: 'pages#try', as: :try
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

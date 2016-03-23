@@ -11,6 +11,7 @@ Arrange by: <br>
 <table class="table">
   <thead>
     <tr>
+      <td>Picture</td>
       <td>Name</td>
       <td>Date</td>
       <td>Architecture</td>
@@ -23,6 +24,7 @@ Arrange by: <br>
   <tbody>
     <% @churches.each do |church| %>
       <tr>
+        <td><%= image_tag "thumbnailchurch"+church.id.to_s+".jpg", :class=>"d-pic" %></td>
         <td><%= link_to church.name, church %></td>
         <td><%= church.year %></td>
         <td><%= church.architecture %></td>

@@ -16,6 +16,7 @@ class PagesController < ApplicationController
   end
 
   def login
+    @suggestions = ActiveRecord::Base.connection.execute("SELECT * FROM suggestions");
   end
 
   def home

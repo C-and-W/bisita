@@ -581,7 +581,7 @@ min-height: 700px;
 
 /* SUGGEST */
 
-#suggest_form {
+#suggest_form .options{
 
   input {
     visibility:hidden;
@@ -592,7 +592,7 @@ min-height: 700px;
   }
 
   input:checked + label {
-    color: red;
+    color: #d6b34a;
   }  
 }
 
@@ -638,7 +638,7 @@ min-height: 700px;
 }
 
 .sg-td4{
-  margin-top: 15vh;
+  margin-top: 10vh;
  }
 
 .sg-title4{
@@ -649,6 +649,11 @@ min-height: 700px;
   letter-spacing: 3px;
 }
 
+.sg-td5{
+  margin-top: 3vh;
+ }
+
+
 .sg-rlink{
   min-height: 50px;
   color:#9e9e9e;
@@ -656,4 +661,15 @@ min-height: 700px;
   font-weight: 700;
   letter-spacing: 2px;
   font-size: 18px;
+ }
+
+ .sg-pic{
+  background-color: #9e9e9e;
+  height: 50px;
+ }
+
+ /* DISCOVER */
+
+ .d-pic{
+  height: 100px;
  }
