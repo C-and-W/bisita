@@ -677,7 +677,7 @@ min-height: 700px;
     background-image: url(/assets/33.jpg);
 }
 
-#sr-td1, .sr-link, #sr-message{
+#sr-td1, .sr-link, #sr-message, .search-box{
   min-height: 50px;
   font-family: 'Titillium Web', sans-serif;
   font-weight: 700;
@@ -687,7 +687,6 @@ min-height: 700px;
 #sr-td1{
   color: white;
   font-size: 15px;
-  font-size: 18px;
   margin-top: 5vh;
 }
 
@@ -716,4 +715,11 @@ min-height: 700px;
 
 #sr-box{
   margin-top: 10vh;
+}
+
+.search-box{
+  width: 350px;
+  height: 50px;
+  border: none;
+  opacity: 0.4;
 }
