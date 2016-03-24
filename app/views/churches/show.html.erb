@@ -35,23 +35,31 @@
 <br>
 <span class="d-subtitle"><%= @church.latitude %> &deg;N <%= @church.longitude %> &deg;E</span>
 </div>
+<section class="viewdiv">
+</section>
 <hr>
 
-<div class="row">
+<div class="row d-stitle">
   <div class="col-md-6">
-    Year: <%= @church.year %><br>
+  <span class="pull-right" style="margin-right:10vw;">
+    YEAR: <%= @church.year %><br>
     <% if @church.year_note.present? %>
-      <%= @church.year_note %><br>
+      <%= @church.year_note.upcase %><br>
     <% end %>
-    Architectural Style: <%= @church.architecture %><br>
-    Make/Composition: <%= @church.make %><br>
-    Region: <%= @church.region %>
+    ARCHITECTURAL STYLE: <%= @church.architecture.upcase %><br>
+    MAKE/COMPOSITION: <%= @church.make.upcase %><br>
+    REGION: <%= @church.region.upcase %>
+    </span>
   </div>
   <div class="col-md-6">
-    Distance From Manila: <%= @church.distance %> Km<br>
-    Travel Time From Manila: <br>
+  <span  style="margin-left:10vw;">
+    <div>
+    DISTANCE FROM MANILA: <%= @church.distance %> KM<br>
+    TRAVEL TIME FROM MANILA: <br>
     <% @church.travel_times.each do |t| %>
-      <%= t.transportation %> - <%= t.hours %> hour <%= t.minutes %> minutes <br>
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= t.transportation.upcase %> - <%= t.hours %> HOURS <%= t.minutes %> MINUTES 
+      </div>
+          </span>
     <% end %>
   </div>
 </div>
