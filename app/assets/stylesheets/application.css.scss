@@ -17,6 +17,9 @@
  #body_home{
   overflow-x:hidden;
  }
+ body{
+ 	overflow-x:hidden;
+ }
  #hs1,#hs2,#hs3,#hs4,#hs5,#hs6,#hs7,#hs8,#hs9,#hc1,#hc2,#hc1-front,#hc1-back,#hc2-front,#hc2-back {
      background-size: cover;
      -webkit-background-size: cover;
@@ -749,8 +752,8 @@ min-height: 700px;
   color: black;
 }
 .d-stitle{
-	padding-top: 3vh;
-	min-height:25vh;
+	padding-top: 7vh;
+	min-height:30vh;
 	font-family: 'Titillium Web', sans-serif;
   font-weight: 800;
   font-size: 20px!important;
