@@ -37,11 +37,11 @@
 </div>
 <section class="viewdiv">
 </section>
-<hr>
+
 
 <div class="row d-stitle">
   <div class="col-md-6">
-  <span class="pull-right" style="margin-right:10vw;">
+  <span class="pull-right" style="margin-left:10vw;margin-right:7vw;">
     YEAR: <%= @church.year %><br>
     <% if @church.year_note.present? %>
       <%= @church.year_note.upcase %><br>
@@ -52,27 +52,32 @@
     </span>
   </div>
   <div class="col-md-6">
-  <span  style="margin-left:10vw;">
-    <div>
+
+    <div style="margin-left:5vw;">
+    <span>
     DISTANCE FROM MANILA: <%= @church.distance %> KM<br>
     TRAVEL TIME FROM MANILA: <br>
     <% @church.travel_times.each do |t| %>
-      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= t.transportation.upcase %> - <%= t.hours %> HOURS <%= t.minutes %> MINUTES 
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= t.transportation.upcase %> - <%= t.hours %> HOURS <%= t.minutes %> MINUTES<br>
+      </span> 
+          <% end %>
       </div>
-          </span>
-    <% end %>
   </div>
 </div>
 
-<hr>
+<section id="d-church" class="row">
+  <div class="col-md-6 d-c-half1" style="">
+    <div style="width:100%;">
+    <span class="d-titleb1" style="margin-left:4vw;" ><%= @church.bg_title1.upcase %></span><br>
+    <span class="d-titleb2" style="margin-left:4vw;" ><%= @church.bg_title2.upcase %></span><br><br>
+  <p class="d-ptext"style="margin-left:4vw; margin-right:5vw;"><%= @church.background %></p>
+    </div>
+  </div>
 
-<div>
-  <h4><%= @church.bg_title1 %><br>
-    <%= @church.bg_title2 %></h4>
-  <p><%= @church.background %></p>
-</div>
+  <div class="col-md-6 d-c-half2" style="background-image:url(/assets/d-c-half<%=@church.id.to_s%>.jpg); background-size:cover;">
+  </div>
+</section>
 
-<hr>
 
 <div>
   <h4>HISTORICAL TIMELINE</h4>
@@ -101,3 +106,8 @@
     <% end %>
   <% end %>
 </div>
+<script>
+$(document).ready(function() {
+  $(".d-c-half2,.d-c-half1").css("height", $("#d-church").height());
+});
+</script>
