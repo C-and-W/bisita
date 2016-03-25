@@ -3,6 +3,7 @@ class Church < ActiveRecord::Base
   has_many :facts, dependent: :destroy
   has_many :timeline_points, dependent: :destroy
   has_many :travel_times, dependent: :destroy
+  has_many :panos
 
   accepts_nested_attributes_for :artistic_values, :allow_destroy => true
   accepts_nested_attributes_for :facts, :allow_destroy => true

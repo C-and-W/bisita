@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pano_id: MyText
+  church_id: 1
+
+two:
+  pano_id: MyText
+  church_id: 1

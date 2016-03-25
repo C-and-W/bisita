@@ -16,6 +16,7 @@ class CreateChurches < ActiveRecord::Migration
       t.text :bg_title2
       t.string :fact_title
       t.integer :artistic_value
+      t.integer :photo_number
 
       t.timestamps null: false
     end
