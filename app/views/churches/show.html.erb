@@ -29,14 +29,22 @@
 </nav>
 <body>
 <br><br><br><br><br><br><br>
-<div class="d-title-div">
-<span class="d-title"><%= @church.name.upcase %>,<br>
-<%= @church.location.upcase %></span>
+<section class="d-t-sec">
+<div class="d-title-div row">
+<div class="col-md-1"style="background-image:url(/assets/back.png);height:60px;width:60px;background-size:cover;background-position: center;"></div>
+<div class="d-title col-md-11"><%= @church.name.upcase %>,<br>
+<%= @church.location.upcase %></div>
 <br>
-<span class="d-subtitle"><%= @church.latitude %> &deg;N <%= @church.longitude %> &deg;E</span>
 </div>
+
+<div class="d-title-div1 row">
+
+<div class="d-subtitle"><%= @church.latitude %> &deg;N <%= @church.longitude %> &deg;E</div>
+</div>
+</section>
+
 <section class="viewdiv">
-<iframe frameborder="0" style="border: 0; height:90vh; width:100vw;" src="https://maps.google.com/maps?layer=c&panoid=8QF2TNoY9UwvXDUcxcrF4w&ie=UTF8&source=embed&output=svembed&cbp=13%2C209%2C%2C0%2C1.3" allowfullscreen=true></iframe>
+<iframe frameborder="0" style="border: 0; height:90vh; width:100vw;" src="https://maps.google.com/maps?layer=c&panoid=F:-HzhfhRvtRos/VvUOk568cCI/AAAAAAAAHYw/GyUDkEHwZBIuea8AyZK2xkOwFx80KkNzQ&ie=UTF8&source=embed&output=svembed&cbp=13%2C304%2C%2C0%2C-1.5" allowfullscreen=true></iframe>
 </section>
 
 
@@ -129,15 +137,17 @@
 <span class="d-t-title">PHOTOBOOK</span>
 </section>
 
-<div>
+<section class="d-did" style="background-image:url(/assets/d-did<%=@church.id.to_s%>.jpg); background-size:cover; padding-top:10vh;">
+<center>
   <% if @church.facts.count != 0 %>
-    <h4>DID YOU KNOW?</h4><br>
-    <h4><%= @church.fact_title %></h4>
+    <span class="d-did-title">DID YOU KNOW?</span><br>
+    <span class="d-did-ftitle"><%= @church.fact_title %></span><br><br><br>
     <% @church.facts.each do |f| %>
-      <%= f.description %><br><br>
+      <div style="margin-left:0vw; width:60vw;"><span class="d-ptext"><%= f.description %></span></div><br><br>
     <% end %>
   <% end %>
-</div>
+  </center>
+</section>
 </body>
 <script>
 $(document).ready(function() {
