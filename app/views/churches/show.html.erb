@@ -27,7 +27,7 @@
     </div>
   </div><!-- /.container-fluid -->
 </nav>
-
+<body>
 <br><br><br><br><br><br><br>
 <div class="d-title-div">
 <span class="d-title"><%= @church.name.upcase %>,<br>
@@ -80,23 +80,54 @@
 </section>
 
 
-<div>
-  <h4>HISTORICAL TIMELINE</h4>
-  <% @church.timeline_points.each do |t| %>
-    <%= t.year %><br>
-    <%= t.description %><br>
-  <% end %>
-</div>
+<div class="d-t-div row">
+  <span class="d-t-title">HISTORICAL TIMELINE</span><br><br><br>
+  <div class="col-xs-offset-2 col-xs-8">
+    <div class="d-t-line">
 
-<hr>
+    <%count=0%>
+    <% @church.timeline_points.each do |t| %>
+      <%count=count+1%>
+    <%end%>
 
-<div>
+    <%counter=0%>
+    <% @church.timeline_points.each do |t| %>
+      <%margin=((t.year.to_i-1500)/18)+counter%>
+      <%margin2=margin.to_s+"vw"%>
+      <%counter=counter+(40/count)%>
+      <div id="<%=t.id.to_s%>a"class="d-t-circle" style="margin-left:<%=margin2%>!important;">
+              <div class="d-desc-line"></div>
+        <div class="d-desc" id="<%=t.id.to_s%>b">
+              <center>
+            <span class="d-desc-y"><%= t.year %></span>
+            <br>
+            <span class="d-desc-d"><%= t.description %></span>
+            </center>
+        </div>
+      </div>
+    <% end %>
+    </div>
+    </div>
+  </div>
+
+
+<section id="d-churcha" class="row">
+
+  <div class="col-md-6 d-c-halfb" style="background-image:url(/assets/d-av-half<%=@church.id.to_s%>.jpg); background-size:cover;">
+  </div>
+   <div class="col-md-6 d-c-halfa" style="">
+    <div style="width:100%;">
   <% @church.artistic_values.each do |t| %>
-    <%= t.description %><br><br>
-  <% end %>
-</div>
+    <p class="d-ptext"style="margin-left:4vw; margin-right:5vw;"><%= t.description %></p>
+<br>
+  <% end %>    </div>
+  </div>
+</section>
 
-<hr>
+<section id="d-photobook">
+<br><br>
+<span class="d-t-title">PHOTOBOOK</span>
+</section>
 
 <div>
   <% if @church.facts.count != 0 %>
@@ -107,8 +138,13 @@
     <% end %>
   <% end %>
 </div>
+</body>
 <script>
 $(document).ready(function() {
   $(".d-c-half2,.d-c-half1").css("height", $("#d-church").height());
 });
+$(document).ready(function() {
+  $(".d-c-halfb,.d-c-halfa").css("height", $("#d-churcha").height());
+});
 </script>
+
