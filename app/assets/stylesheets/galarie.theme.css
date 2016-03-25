@@ -18,7 +18,7 @@
   height: 100%;
   overflow: hidden;
   text-align: center;
-  background: #cccccc;
+  background: transparent;
 }
 .galarie .controls {
   position: absolute;
