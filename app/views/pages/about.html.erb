@@ -54,7 +54,7 @@
   <section id="as5">
   <!--IMAGE LONG-->
   <div class="row as5-cont">
-      <%= link_to churches_path,:class=>"" do%>
+
     <div class="col-md-4 as5-sec">
         <center>
           <%=image_tag "about1.png", :class=>"as5-pic"%>
@@ -63,12 +63,15 @@
           CHURCHES
           </span>
       <hr class="as1-u1">
+
+      <%= link_to churches_path,:class=>"as-link" do%>
+      <div class="as1-btn">VIEW</div>
+      <%end%>
       </center>
     </div>
-    <%end%>
+
     
 
-    <%= link_to suggest_path,:class=>"" do%>
     <div class="col-md-4 as5-sec">
     <center>
       <%=image_tag "about2.png", :class=>"as5-pic"%>
@@ -77,12 +80,12 @@
       CONTRIBUTE</span>
 
       <hr class="as1-u1">
+      <%= link_to suggest_path,:class=>"as-link" do%>
+      <div class="as1-btn">VIEW</div>
+      <% end %>
       </center>
     </div>
-    </a>
-    <% end %>
 
-    <a href="https://twitter.com/BisitaPH">
     <div class="col-md-4 as5-sec">
     <center>
       <%=image_tag "about3.png", :class=>"as5-pic"%>
@@ -91,10 +94,12 @@
       NEWS
    </span>
    <hr class="as1-u1">
+    <a class="as-link"href="https://twitter.com/BisitaPH">
+    <div class="as1-btn">VIEW</div>
+    </a>
       </center>
     </div>
   </div>
-  </a>
 
   </section>
 <section id="ab6">
