@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322172032) do
+ActiveRecord::Schema.define(version: 20160325162629) do
 
   create_table "artistic_values", force: :cascade do |t|
     t.text     "description"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160322172032) do
     t.text     "bg_title2"
     t.string   "fact_title"
     t.integer  "artistic_value"
+    t.integer  "photo_number"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -45,6 +46,13 @@ ActiveRecord::Schema.define(version: 20160322172032) do
     t.integer  "church_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "panos", force: :cascade do |t|
+    t.text     "pano_id"
+    t.integer  "church_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pg_search_documents", force: :cascade do |t|

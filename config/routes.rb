@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/submit', to: 'pages#submit', as: :submit
   get '/search', to: 'pages#search', as: :search
   get '/results', to: 'pages#results', as: :results
+  get '/discover', to: 'churches#region', as: :region
   resources :churches, except: [:new, :edit]
 
 

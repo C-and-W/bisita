@@ -189,13 +189,15 @@
 
 	<div class="container hs8-regions">
 		<div class="row">
-			<div class="col-md-4 hs8-rlink"><center>REGION I</center></div>
-			<div class="col-md-4 hs8-rlink"><center>REGION II</center></div>
-			<div class="col-md-4 hs8-rlink"><center>REGION III</center></div>
+         
+			<div class="col-md-4 hs8-rlink"><center><%= link_to "REGION I", region_path(region: "I"), :class=>"hs8-rlink" %></center></div>
+
+			<div class="col-md-4 hs8-rlink"><center><%= link_to "REGION II", region_path(region: "II"), :class=>"hs8-rlink" %></center></div>
+			<div class="col-md-4 hs8-rlink"><center><%= link_to "REGION III", region_path(region: "III"), :class=>"hs8-rlink" %></center></div>
 		</div>
 		<div class="row">
-			<div class="col-md-6 hs8-rlink"><center>REGION IV-A</center></div>
-			<div class="col-md-6 hs8-rlink"><center>NATIONAL CAPITAL<br>REGION</center></div>
+			<div class="col-md-6 hs8-rlink"><center><%= link_to "REGION IV-A", region_path(region: "IV-A"), :class=>"hs8-rlink" %></center></div>
+			<div class="col-md-6 hs8-rlink"><center><%= link_to "NATIONAL CAPITAL<br>REGION".html_safe, region_path(region: "NCR"), :class=>"hs8-rlink" %></center></div>
 		</div>
 	</div>
 	</section>

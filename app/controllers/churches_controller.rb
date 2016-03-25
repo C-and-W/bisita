@@ -18,6 +18,11 @@ class ChurchesController < ApplicationController
   def show
   end
 
+  def region
+    @churches = Church.where(region: params['region'])
+    render :index
+  end
+
   # POST /churches
   # POST /churches.json
   def create
