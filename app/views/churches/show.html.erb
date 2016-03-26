@@ -34,6 +34,7 @@
 </nav>
 <body>
 <br><br><br><br><br><br><br>
+
 <section class="d-t-sec">
 <div class="d-title-div row">
 <%=link_to churches_path do%>
@@ -47,30 +48,26 @@
 
 <div class="d-subtitle"><%= @church.latitude %> &deg;N <%= @church.longitude %> &deg;E</div>
 </div>
-
-
+<%panocount=0%>
+<% @church.panos.each do |t| %>
+  <%panocount=panocount+1%>
+<% end %>
 <section class="viewdiv">
 <div class="galarie items-3">
-  <div id="item-1" class="control-operator"></div>
-  <div id="item-2" class="control-operator"></div>
-  <div id="item-3" class="control-operator"></div>
+<% (1..panocount).each do |i| %>
+    <div id="item-<%=i%>" class="control-operator"></div>
+<% end %>
 
-  <figure class="item">
-    <iframe frameborder="0" style="border: 0; height:85vh; width:100vw;" src="https://maps.google.com/maps?layer=c&panoid=F:-HzhfhRvtRos/VvUOk568cCI/AAAAAAAAHYw/GyUDkEHwZBIuea8AyZK2xkOwFx80KkNzQ&ie=UTF8&source=embed&output=svembed&cbp=13%2C304%2C%2C0%2C-1.5" allowfullscreen=true></iframe>
+<% @church.panos.each do |t| %>
+<figure class="item">
+    <iframe frameborder="0" style="border: 0; height:85vh; width:100vw;" src="https://maps.google.com/maps?layer=c&panoid=F:<%= t.pano_id %>&ie=UTF8&source=embed&output=svembed&cbp=13%2C304%2C%2C0%2C-1.5" allowfullscreen=true></iframe>
   </figure>
-
-  <figure class="item">
-    <iframe frameborder="0" style="border: 0; height:85vh; width:100vw;" src="https://maps.google.com/maps?layer=c&panoid=F:-o1wrKTLrKoE%2FVvUOk5Hu1OI%2FAAAAAAAAHY0%2FhG-zxhUnCesdEOLRIDCuO9zrjBU87PnAQ&ie=UTF8&source=embed&output=svembed&cbp=13%2C304%2C%2C0%2C-1.5" allowfullscreen=true></iframe>
-  </figure>
-
-  <figure class="item">
-    <h1>3</h1>
-  </figure>
+<% end %>
 
   <div class="controls">
-    <a href="#item-1" class="control-button">•</a>
-    <a href="#item-2" class="control-button">•</a>
-    <a href="#item-3" class="control-button">•</a>
+  <% (1..panocount).each do |i| %>
+    <a href="#item-<%=i%>" class="control-button">•</a>
+  <% end %>
   </div>
 </div>
 </section>
