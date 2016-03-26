@@ -191,18 +191,19 @@
             <div id="closeBtn">CLOSE</div>
 
 </section>
-
+<% if @church.facts.count != 0 %>
 <section class="d-did" style="background-image:url(/assets/d-did<%=@church.id.to_s%>.jpg); background-size:cover; padding-top:10vh;">
 <center>
-  <% if @church.facts.count != 0 %>
+
     <span class="d-did-title">DID YOU KNOW?</span><br>
     <span class="d-did-ftitle"><%= @church.fact_title %></span><br><br><br>
     <% @church.facts.each do |f| %>
       <div style="margin-left:0vw; width:60vw;"><span class="d-ptext"><%= f.description %></span></div><br><br>
     <% end %>
-  <% end %>
+
   </center>
 </section>
+<% end %>
 
 </body>
 <script>
