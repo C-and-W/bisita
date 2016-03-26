@@ -45,14 +45,14 @@
 <%= sortable "artistic_value", "Amount of Artistic Value" %></center></div>
   </section>
 
-<section class="container-fluid" style="min-height:320vh; padding-top:4vh;">
+<section class="container-fluid" style="min-height:320vh; padding-top:0vh;">
 
 
 <div class="row" style="margin-left:3px; margin-right:3px;">
     <% @churches.each do |church| %>
         <div class="col-md-6">
         <%=link_to church, :class=>"d-pic-link" do%>
-          <div class="d-pic" style="height: 53vh; background-image:url(/assets/thumbnailchurch<%=church.id.to_s%>.jpg); background-size:cover; display:block;">
+          <div class="d-pic" style="height: 53vh; background-image:url(/assets/thumbnailchurch<%=church.id.to_s%>.jpg); background-size:cover; display:block; margin-top:4.5vh;">
           <div class="d-pic-text"><center><%=church.name.upcase %>,<br><%= church.location.upcase  %></center></div>
           </div>  
           <%end%>
