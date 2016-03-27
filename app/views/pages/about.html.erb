@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color:transparent; height:100px; padding:none; border-color:transparent; border:none;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%=image_tag "Logo-White-01.png", :style => "width: 90%; margin-top:0px; margin-left:5vw;"%></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
+      <ul class="nav navbar-nav navbar-right" style="padding-top:20px;height:100px!important;">
+        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink active1"><%= link_to 'ABOUT', about_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a", 'data-no-turbolink' => true  %></li>
+
+
+
+      </ul>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+</head>
+<body id="body_home">
+
+  <section id="as1" data-parallax="scroll" data-image-src="/assets/12.jpg">
+ <!--  LANDING -->
+    <div class="a-td1"><center><span class="a-title1">BISITA UNRAVELS CHURCHES <br> TO THE COMMON EYE;<br>HIGHLIGHTING ART AND DESIGN</span></center></div>
+  </section>
+
+  <section id="as2" data-parallax="scroll" data-image-src="/assets/13.jpg">
+    <div class="a-td2"><span class="a-title2">Bisita highlights the significant value of<br>uncommon churchs and their architecture, <br>make, artworks, design and history; bringing<br>in a whole new perspective of meaning<br>and principle to the country's churches.</span><br><hr id="ab2-u1" class="pull-right"></div>
+  </section>
+
+  <section id="as3" data-parallax="scroll" data-image-src="/assets/36.jpg">
+    <div class="a-td3"><span class="a-title3">Bisita delivers all levels of historic facts and<br>zones in on the tiniest of details. Behind each<br>facade, from the grandest down to the simplest,<br>each church has their own unique story to tell.<br><hr id="ab2-u1" class="pull-left"></span></div>
+  </section>
+
+  <section id="as4"data-parallax="scroll" data-image-src="/assets/37.jpg">
+    <div class="a-td4"><span class="a-title4">Bisita answers the problem of inaccessibility<br>by providing a spherical view of the interiors of<br>the churches. The beauty of the churches are<br>showcased in an entirely new medium.<br><hr id="ab2-u1" class="pull-right"></span></div>
+  </section>
+
+  <section id="as5">
+  <!--IMAGE LONG-->
+  <div class="row as5-cont">
+
+    <div class="col-md-4 as5-sec">
+        <center>
+          <%=image_tag "about1.png", :class=>"as5-pic"%>
+          <br><br>
+          <span class="as5-text">
+          CHURCHES
+          </span>
+      <hr class="as1-u1">
+
+      <%= link_to churches_path,:class=>"as-link" do%>
+      <div class="as1-btn">VIEW</div>
+      <%end%>
+      </center>
+    </div>
+
+    
+
+    <div class="col-md-4 as5-sec">
+    <center>
+      <%=image_tag "about2.png", :class=>"as5-pic"%>
+      <br><br>
+      <span class="as5-text">
+      CONTRIBUTE</span>
+
+      <hr class="as1-u1">
+      <%= link_to suggest_path,:class=>"as-link" do%>
+      <div class="as1-btn">VIEW</div>
+      <% end %>
+      </center>
+    </div>
+
+    <div class="col-md-4 as5-sec">
+    <center>
+      <%=image_tag "about3.png", :class=>"as5-pic"%>
+      <br><br>
+      <span class="as5-text">
+      NEWS
+   </span>
+   <hr class="as1-u1">
+    <a class="as-link"href="https://twitter.com/BisitaPH">
+    <div class="as1-btn">VIEW</div>
+    </a>
+      </center>
+    </div>
+  </div>
+
+  </section>
+<section id="ab6">
+  <!--FOOTER-->
+  <%=image_tag "Logo-White-01.png", :style => "width: 170px; margin-top:-5px; margin-left:25vw;"%> <span id="hs9-footer">&nbsp &nbsp&nbsp DISCOVERING PHILIPPINE CHURCHES</span>
+  </section>
+  
+
+
+  <script src="/assets/parallax.js"></script>
+  <script type="text/javascript">
+
+  $('#as1').parallax({imageSrc: '/assets/12.jpg'});
+  $('#as2').parallax({imageSrc: '/assets/13.jpg'});
+  $('#as3').parallax({imageSrc: '/assets/36.jpg'});
+  $('#as4').parallax({imageSrc: '/assets/37.jpg'});
+    function checkScroll(){
+        var startY = $('.navbar').height() * 4; //adjusts where transition starts
+
+        if($(window).scrollTop() > startY){
+            $('.navbar').addClass("scrolled");
+        }else{
+            $('.navbar').removeClass("scrolled");
+        }
+    }
+
+    if($('.navbar').length > 0){
+        $(window).on("scroll load resize", function(){
+            checkScroll();
+        });
+    }
+  </script>
+</body>

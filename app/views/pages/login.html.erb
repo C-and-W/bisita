@@ -1,0 +1,24 @@
+<h4>Suggestions</h4>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>Church</td>
+      <td>Category</td>
+      <td>Suggestion</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @suggestions.each do |s| %>
+    <tr>
+      <td><%= s['church'] %></td>
+      <td><%= s['category'] %></td>
+      <td><%= s['suggestion'] %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+</script>

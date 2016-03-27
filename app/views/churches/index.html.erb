@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color:transparent; height:100px; padding:none; border-color:transparent; border:none;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%=image_tag "Logo-White-01.png", :style => "width: 90%; margin-top:0px; margin-left:5vw;"%></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
+      <ul class="nav navbar-nav navbar-right" style="padding-top:20px;height:100px!important;">
+        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'ABOUT', about_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink active1"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a", 'data-no-turbolink' => true  %></li>
+
+
+
+      </ul>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+</head>
+<body id="body_home">
+
+  <section id="dis1" data-parallax="scroll" data-image-src="/assets/42.jpg">
+ <!--  LANDING -->
+    <div class="dis1-td1"><div class="dis1-arr"> Arrange by:</div> <br><br><center>
+<%= sortable "year" %> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+<%= sortable "architecture" %> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+<%= sortable "make", "Composition" %><br><br><br>
+<%= sortable "region" %> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<%= sortable "distance", "Distance From Manila" %> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<%= sortable "artistic_value", "Amount of Artistic Value" %></center></div>
+  </section>
+
+<section class="container-fluid" style=" padding-top:0vh;">
+
+
+<div class="row" style="margin-left:3px; margin-right:3px;">
+    <% @churches.each do |church| %>
+        <div class="col-md-6">
+        <%=link_to church, :class=>"d-pic-link" do%>
+          <div class="d-pic" style="height: 53vh; background-image:url(/assets/thumbnailchurch<%=church.id.to_s%>.jpg); background-size:cover; display:block; margin-top:4.5vh;">
+          <div class="d-pic-text"><center><%=church.name.upcase %>,<br><%= church.location.upcase  %></center></div>
+          </div>  
+          <%end%>
+        </div>
+    <% end %>
+<div>
+
+
+</section>
+<section id="ab6" style="margin-top:4.5vh;">
+  <!--FOOTER-->
+  <%=image_tag "Logo-White-01.png", :style => "width: 170px; margin-top:-5px; margin-left:25vw;"%> <span id="hs9-footer">&nbsp &nbsp&nbsp DISCOVERING PHILIPPINE CHURCHES</span>
+</section>
+  
+
+
+  <script src="/assets/parallax.js"></script>
+  <script type="text/javascript">
+
+  $('#dis1').parallax({imageSrc: '/assets/42.jpg'});
+  $('#as2').parallax({imageSrc: '/assets/13.jpg'});
+  $('#as3').parallax({imageSrc: '/assets/36.jpg'});
+  $('#as4').parallax({imageSrc: '/assets/37.jpg'});
+    function checkScroll(){
+        var startY = $('.navbar').height() * 4; //adjusts where transition starts
+
+        if($(window).scrollTop() > startY){
+            $('.navbar').addClass("scrolled");
+        }else{
+            $('.navbar').removeClass("scrolled");
+        }
+    }
+
+    if($('.navbar').length > 0){
+        $(window).on("scroll load resize", function(){
+            checkScroll();
+        });
+    }
+  </script>
+</body>
+
+<script src="sorttable.js"></script>

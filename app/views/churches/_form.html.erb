@@ -1,0 +1,125 @@
+<%= nested_form_for(@church) do |f| %>
+  <% if @church.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@church.errors.count, "error") %> prohibited this church from being saved:</h2>
+
+      <ul>
+      <% @church.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name, :class=>"form-control" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :location %></td>
+      <td><%= f.text_field :location, :class=>"form-control" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :year %></td>
+      <td><%= f.text_field :year, :class=>"form-control" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :year_note, 'Notes on Year' %></td>
+      <td><%= f.text_area :year_note, :class=>"form-control" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :architecture, 'Architectural Style' %></td>
+      <td><%= f.text_area :architecture, :class=>"form-control" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :distance, 'Distance from Manila' %></td>
+      <td><%= f.number_field :distance, :class=>"form-control" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :make %></td>
+      <td><%= f.text_field :make, :class=>"form-control" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :region %></td>
+      <td><%= f.text_field :region, :class=>"form-control" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :longitude %></td>
+      <td><%= f.number_field :longitude, :class=>"form-control", :step => 'any' %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :latitude %></td>
+      <td><%= f.number_field :latitude, :class=>"form-control", :step => 'any' %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :background, 'Historical Background' %></td>
+      <td><%= f.text_area :background, :class=>"form-control" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :fact_title, 'Did You Know? Caption' %></td>
+      <td><%= f.text_area :fact_title, :class=>"form-control" %></td>
+    </tr>
+  </table>
+
+  <hr>
+  
+  <%= f.link_to_add "Add Travel Times", :travel_times, :data => {:target => "#travel_times"}, :class => "btn btn-primary" %></p>
+  <table id = "travel_times">
+    <%= f.fields_for :travel_times, :wrapper => false do |ff| %>
+    <tr class = "fields">
+      <td><%= ff.label :transportation %></td>
+      <td><%= ff.text_field :transportation %></td>
+      <td><label>Time</label>
+      <td><%= ff.number_field :hours, :placeholder => "Hours" %> <%= ff.number_field :minutes, :placeholder => "Minutes" %></td>
+      <td><%= ff.link_to_remove "Remove" %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <hr>
+  
+  <%= f.link_to_add "Add Timeline Points", :timeline_points, :data => {:target => "#timeline_points"}, :class => "btn btn-primary" %></p>
+  <table id = "timeline_points">
+    <%= f.fields_for :timeline_points, :wrapper => false do |ff| %>
+    <tr class = "fields">
+      <td><%= ff.label :year %></td>
+      <td><%= ff.number_field :year %></td>
+      <td><%= ff.label :description %></td>
+      <td><%= ff.text_area :description %></td>
+      <td><%= ff.link_to_remove "Remove" %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <hr>
+
+  <%= f.link_to_add "Add Artistic Value", :artistic_values, :data => {:target => "#artistic_values"}, :class => "btn btn-primary" %></p>
+  <table id = "artistic_values">
+    <%= f.fields_for :artistic_values, :wrapper => false do |ff| %>
+    <tr class = "fields">
+      <td><%= ff.label :description %></td>
+      <td><%= ff.text_area :description %></td>
+      <td><%= ff.link_to_remove "Remove" %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <hr>
+  
+  <%= f.link_to_add "Add Did You Know? Facts", :facts, :data => {:target => "#facts"}, :class => "btn btn-primary" %></p>
+  <table id = "facts">
+    <%= f.fields_for :facts, :wrapper => false do |ff| %>
+    <tr class = "fields">
+      <td><%= ff.label :description %></td>
+      <td><%= ff.text_area :description %></td>
+      <td><%= ff.link_to_remove "Remove" %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+
+-----------------------------------------
+
+convert lat lon to decimal
+majayjay date nilagay ko na lang na isa kasi need na int for sorting
+sa search, yung x results found. yung x = number of churches found not number of matching words
+
+ayusin format resultss
+
+fix arrangement of results (mauna siguro make etc)
+
+--------------------------------
+
+SEARCH: need postgres for it to work

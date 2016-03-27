@@ -1,0 +1,242 @@
+<link rel="stylesheet" href="/assets/galarie.theme.css">
+<link rel="stylesheet" href="/assets/galarie.min.css">
+<link href="/assets/thumbnail-slider.css" rel="stylesheet" />
+<link href="/assets/thumbs2.css" rel="stylesheet" />
+<script src="/assets/thumbnail-slider.js" type="text/javascript"></script>
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color:#BB5F31; height:100px; padding:none; border-color:transparent; border:none;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%=image_tag "Logo-White-01.png", :style => "width: 90%; margin-top:0px; margin-left:5vw;"%></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myNavbar" style=" border:hidden!important; border-width:0!important;">
+      <ul class="nav navbar-nav navbar-right" style="padding-top:20px;height:100px!important;">
+        <li class="navlink"><%= link_to 'HOME', root_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'ABOUT', about_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink active1"><%= link_to 'DISCOVER', churches_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SEARCH', search_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li class="navlink"><%= link_to 'SUGGEST', suggest_path,:class=>"navlink-a", 'data-no-turbolink' => true %></li>
+        <li style=" margin:7px 7vw 0px 1vw!important;"><%= link_to 'CONTACT', contact_path,:class=>"navlink-a", 'data-no-turbolink' => true  %></li>
+
+
+
+      </ul>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+<body>
+<br><br><br><br><br><br><br>
+
+<section class="d-t-sec">
+<div class="d-title-div row">
+<%=link_to churches_path do%>
+<div class="col-md-1"style="background-image:url(/assets/back.png);height:60px;width:60px;background-size:cover;background-position: center;"></div><%end%>
+<div class="d-title col-md-11"><%= @church.name.upcase %>,<br>
+<%= @church.location.upcase %></div>
+<br>
+</div>
+
+<div class="d-title-div1 row">
+
+<div class="d-subtitle"><%= @church.latitude %> &deg;N <%= @church.longitude %> &deg;E</div>
+</div>
+<%panocount=0%>
+<% @church.panos.each do |t| %>
+  <%panocount=panocount+1%>
+<% end %>
+<section class="viewdiv">
+<div class="galarie items-3">
+<% (1..panocount).each do |i| %>
+    <div id="item-<%=i%>" class="control-operator"></div>
+<% end %>
+
+<% @church.panos.each do |t| %>
+<figure class="item">
+    <iframe frameborder="0" style="border: 0; height:85vh; width:100vw;" src="https://maps.google.com/maps?layer=c&panoid=F:<%= t.pano_id %>&ie=UTF8&source=embed&output=svembed&cbp=13%2C304%2C%2C0%2C-1.5" allowfullscreen=true></iframe>
+  </figure>
+<% end %>
+
+  <div class="controls">
+  <% (1..panocount).each do |i| %>
+    <a href="#item-<%=i%>" class="control-button">•</a>
+  <% end %>
+  </div>
+</div>
+</section>
+
+
+<div class="row d-stitle" style="margin-top:3.5vh;">
+  <div class="col-md-6">
+  <span class="pull-right" style="margin-left:10vw;margin-right:7vw;">
+    YEAR: <%= @church.year %><br>
+    <% if @church.year_note.present? %>
+      <%= @church.year_note.upcase %><br>
+    <% end %>
+    ARCHITECTURAL STYLE: <%= @church.architecture.upcase %><br>
+    MAKE/COMPOSITION: <%= @church.make.upcase %><br>
+    REGION: <%= @church.region.upcase %>
+    </span>
+  </div>
+  <div class="col-md-6">
+
+    <div style="margin-left:5vw;">
+    <span>
+    DISTANCE FROM MANILA: <%= @church.distance %> KM<br>
+    TRAVEL TIME FROM MANILA: <br>
+    <% @church.travel_times.each do |t| %>
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= t.transportation.upcase %> - <%= t.hours %> HOURS <%= t.minutes %> MINUTES<br>
+      </span> 
+          <% end %>
+      </div>
+  </div>
+</div>
+
+<section id="d-church" class="row">
+  <div class="col-md-6 d-c-half1" style="">
+    <div style="width:100%;">
+    <span class="d-titleb1" style="margin-left:4vw;" ><%= @church.bg_title1.upcase %></span><br>
+    <span class="d-titleb2" style="margin-left:4vw;" ><%= @church.bg_title2.upcase %></span><br><br>
+  <p class="d-ptext"style="margin-left:4vw; margin-right:5vw;"><%= @church.background %></p>
+    </div>
+  </div>
+
+  <div class="col-md-6 d-c-half2" style="background-image:url(/assets/d-c-half<%=@church.id.to_s%>.jpg); background-size:cover;">
+  </div>
+</section>
+
+
+<div class="d-t-div row">
+  <span class="d-t-title">HISTORICAL TIMELINE</span><br><br><br>
+  <div class="col-xs-offset-2 col-xs-8">
+    <div class="d-t-line">
+
+    <%count=0%>
+    <% @church.timeline_points.each do |t| %>
+      <%count=count+1%>
+    <%end%>
+
+    <%counter=0%>
+    <% @church.timeline_points.each do |t| %>
+      <%margin=((t.year.to_i-1500)/18)+counter%>
+      <%margin2=margin.to_s+"vw"%>
+      <%counter=counter+(40/count)%>
+      <div id="<%=t.id.to_s%>a"class="d-t-circle" style="margin-left:<%=margin2%>!important;">
+              <div class="d-desc-line"></div>
+        <div class="d-desc" id="<%=t.id.to_s%>b">
+              <center>
+            <span class="d-desc-y"><%= t.year %></span>
+            <br>
+            <span class="d-desc-d"><%= t.description %></span>
+            </center>
+        </div>
+      </div>
+    <% end %>
+    </div>
+    </div>
+  </div>
+
+
+<section id="d-churcha" class="row">
+
+  <div class="col-md-6 d-c-halfb" style="background-image:url(/assets/d-av-half<%=@church.id.to_s%>.jpg); background-size:cover;">
+  </div>
+   <div class="col-md-6 d-c-halfa" style="">
+    <div style="width:100%;">
+  <% @church.artistic_values.each do |t| %>
+    <p class="d-ptext"style="margin-left:4vw; margin-right:5vw;"><%= t.description %></p>
+<br>
+  <% end %>    </div>
+  </div>
+</section>
+
+<section id="d-photobook">
+<br><br>
+<%phnum=@church.photo_number%>
+
+<span class="d-t-title">PHOTOBOOK</span>
+<br><br>
+       <div id="thumbnail-slider">
+            <div class="inner">
+                <ul>
+                <% (1..phnum).each do |i| %>
+                    <li>
+                        <a class="thumb" href="http://s3.amazonaws.com/bisitaph/<%=@church.id%>-<%=i%>-min.jpg"></a>
+                    </li>
+      
+                <% end %>
+
+                </ul>
+
+            </div>
+        </div>
+         <div id="thumbs2" style="display:none;">
+            <div class="inner">
+                <ul>
+                <% (1..phnum).each do |i| %>
+                    <li>
+                        <a class="thumb" href="http://s3.amazonaws.com/bisitaph/<%=@church.id%>-<%=i%>-min.jpg"></a>
+                    </li>
+      
+                <% end %>
+                </ul>
+            </div>
+            <div id="closeBtn">CLOSE</div>
+
+</section>
+<% if @church.facts.count != 0 %>
+<section class="d-did" style="background-image:url(/assets/d-did<%=@church.id.to_s%>.jpg); background-size:cover; padding-top:10vh;">
+<center>
+
+    <span class="d-did-title">DID YOU KNOW?</span><br>
+    <span class="d-did-ftitle"><%= @church.fact_title %></span><br><br><br>
+    <% @church.facts.each do |f| %>
+      <div style="margin-left:0vw; width:60vw;"><span class="d-ptext"><%= f.description %></span></div><br><br>
+    <% end %>
+
+  </center>
+</section>
+<% end %>
+
+</body>
+<script>
+$(document).ready(function() {
+  $(".d-c-half2,.d-c-half1").css("height", $("#d-church").height());
+});
+$(document).ready(function() {
+  $(".d-c-halfb,.d-c-halfa").css("height", $("#d-churcha").height());
+});
+
+</script>
+
+        <script>
+            //Note: this script should be placed at the bottom of the page, or after the slider markup. It cannot be placed in the head section of the page.
+            var thumbs1 = document.getElementById("thumbnail-slider");
+            var thumbs2 = document.getElementById("thumbs2");
+            var closeBtn = document.getElementById("closeBtn");
+            var slides = thumbs1.getElementsByTagName("li");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].index = i;
+                slides[i].onclick = function (e) {
+                    var li = this;
+                    var clickedEnlargeBtn = false;
+                    if (e.offsetX > 220 && e.offsetY < 25) clickedEnlargeBtn = true;
+                    if (li.className.indexOf("active") != -1 || clickedEnlargeBtn) {
+                        thumbs2.style.display = "block";
+                        mcThumbs2.init(li.index);
+                    }
+                };
+            }
+
+            thumbs2.onclick = closeBtn.onclick = function (e) {
+                //This event will be triggered only when clicking the area outside the thumbs or clicking the CLOSE button
+                thumbs2.style.display = "none";
+            };
+        </script>
