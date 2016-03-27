@@ -18,7 +18,7 @@ var thumbnailSliderOptions =
     keyboardNav: true,
     mousewheelNav: true,
     before: null,
-    license: "mylicense"
+    license: ""
 };
 
 var thumbs2Op =
@@ -40,7 +40,7 @@ var thumbs2Op =
     keyboardNav: true,
     mousewheelNav: true,
     before: null,
-    license: "mylicense"
+    license: ""
 };
 
 var mcThumbnailSlider = new ThumbnailSlider(thumbnailSliderOptions);
