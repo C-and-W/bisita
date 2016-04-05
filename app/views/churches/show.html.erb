@@ -78,7 +78,7 @@
   <span class="pull-right" style="margin-left:10vw;margin-right:7vw;">
     YEAR: <%= @church.year %><br>
     <% if @church.year_note.present? %>
-      <%= @church.year_note.upcase %><br>
+      <%= @church.year_note.upcase %>.html_safe<br>
     <% end %>
     ARCHITECTURAL STYLE: <%= @church.architecture.upcase %><br>
     MAKE/COMPOSITION: <%= @church.make.upcase %><br>
