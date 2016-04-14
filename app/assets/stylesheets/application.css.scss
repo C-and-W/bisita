@@ -563,8 +563,27 @@ text-decoration: none;
 	font-size: 17px;
 }
 .dis1-td1 a{
-	color:white!important;
+	color:white!important; 
+  text-decoration: none;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -5px;
+  /* ^- the important bit. RGB 192,192,192 is the same as #C0C0C0*/
+  
+  -webkit-transition: border 650ms ease;
+  -moz-transition: border 650ms ease;
+  -ms-transition: border 650ms ease;
+  -o-transition: border 650ms ease;
+  transition: border 650ms ease; 
+
 }
+ /*.dis1-td1 a:hover{
+    border-bottom: 2px solid white;
+    margin-bottom: -5px;
+ 
+}*/
 
 /*CD TOP*/
 .cd-top {
@@ -675,7 +694,7 @@ text-decoration: none;
 
 #sgs1{
     height: 100vh;
-    background-image: url(/assets/38.jpg);
+    background-image: url(/assets/s-min.jpg);
 }
 
 .sg-title1, .sg-title2{
@@ -922,6 +941,7 @@ border-radius:100%;
 }
 #d-photobook{
 	height: 55vh;
+  color:white;
 }
 .d-did{
 	min-height:70vh; 

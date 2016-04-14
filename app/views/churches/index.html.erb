@@ -34,7 +34,7 @@
 </head>
 <body id="body_home">
 
-  <section id="dis1" data-parallax="scroll" data-image-src="/assets/42.jpg">
+  <section id="dis1" style="background-image:url('/assets/42.jpg');background-size: cover;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;">
  <!--  LANDING -->
     <div class="dis1-td1"><div class="dis1-arr"> Arrange by:</div> <br><br><center>
 <%= sortable "year" %> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
@@ -72,7 +72,7 @@
   <script src="/assets/parallax.js"></script>
   <script type="text/javascript">
 
-  $('#dis1').parallax({imageSrc: '/assets/42.jpg'});
+ 
   $('#as2').parallax({imageSrc: '/assets/13.jpg'});
   $('#as3').parallax({imageSrc: '/assets/36.jpg'});
   $('#as4').parallax({imageSrc: '/assets/37.jpg'});
