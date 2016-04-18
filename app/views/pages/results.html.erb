@@ -67,7 +67,10 @@
       <tbody>
         <% @results.each do |r| %>
         <tr>
-          <td><%= image_tag "thumbnailchurch"+r.id.to_s+".jpg", :class=>"r-pic" %></td>
+          <td>
+          <%bgimg="thumbnailchurch"+r.id.to_s+".jpg"%>
+          <div style="height:300px; width:400px; background-image:url('<%=bgimg%>');background-size:cover;"></div>
+          </td>
           <%
             highlights = []
             sql_architecture = ActiveRecord::Base.connection.execute("SELECT ts_headline(architecture,plainto_tsquery('#{@query}'), 'startsel=''<span class=\"r-highlight\">'' stopsel=</span>') FROM churches WHERE id = #{r.id} AND architecture ILIKE '%#{@query}%'")
