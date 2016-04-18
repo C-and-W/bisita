@@ -78,7 +78,7 @@
   <span class="pull-right" style="margin-left:10vw;margin-right:7vw;">
     YEAR: <%= @church.year %><br>
     <% if @church.year_note.present? %>
-      <%= @church.year_note.upcase %><br>
+      <%= @church.year_note.upcase/html_safe %><br>
     <% end %>
     ARCHITECTURAL STYLE: <%= @church.architecture.upcase %><br>
     MAKE/COMPOSITION: <%= @church.make.upcase %><br>
@@ -151,7 +151,8 @@
    <div class="col-md-6 d-c-halfa" style="">
     <div style="width:100%;">
   <% @church.artistic_values.each do |t| %>
-    <p class="d-ptext"style="margin-left:4vw; margin-right:5vw;"><%= t.description %></p>
+    <p class="d-ptext"style="margin-left:4vw; margin-right:5vw;"><%= t.description.html_safe %></p>
+
 <br>
   <% end %>    </div>
   </div>

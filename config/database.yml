@@ -22,18 +22,17 @@ test:
 
 # FOR POSTGRES DEVELOPMENT AND TEST
 
-# default: &default
-#  adapter: postgresql
-#  encoding: unicode
-#  pool: 5
+#default: &default
+ # adapter: postgresql
+  #encoding: unicode
+ # pool: 5
 
-# development:
-#  <<: *default
-#  database: bisitapg
-#  host: localhost
+#development:
+ # <<: *default
+ # database: bisitapg
+ # host: localhost
 #  username: pguser
 #  password: Atenean12
-
 
 # test:
 #  <<: *default
@@ -44,6 +43,14 @@ test:
 # production:
 #   <<: *default
 #   database: db/production.sqlite3
+
+#######################
+
+
+production:
+  <<: *default
+  database: db/production.sqlite3
+>>>>>>> c530974ab5e742a80ea77077b444a9266a5e302c
 
 
 ####################
