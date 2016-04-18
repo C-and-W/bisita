@@ -30,7 +30,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 </head>
-<body id="body_home">
+<body id="body_home" style="padding-left: 50px; margin-top: -20px;">
 
   <% if params['query'] == "" || params['query'].strip.empty? %>
      <% @message = "No search query." %> 
@@ -48,15 +48,14 @@
 
   <div id="r-form">
     <form action="/results">
-      <div class="row">
-        <div class="col-md-2"><br><br><input name="query" class="r-search" style="margin-left:10px;"></div>
-        <br><br>
-        <div id="r-message" class="col-md-10" style="">
-          <% if !@message.nil? %>
-            <%= @message %>
-          <% end %>
-        </div>
-      </div>
+      <br><br><input name="query" class="r-search" style="margin-left:10px; height: 40px; width: 270px; padding-left: 45px; padding-right: 20px;">
+      <img src="/assets/Search-01.png" style="height: 30px; -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);-webkit-transform: scaleX(-1);transform: scaleX(-1);filter: FlipH;-ms-filter: 'FlipH'; margin-top: -5px; margin-left: -270px;">
+      <span id="r-message" style="margin:0; padding:0; margin-left: 280px; padding-top: 10px;">
+        <% if !@message.nil? %>
+          <%= @message %>
+        <% end %>
+      </span>
       <input type="submit" value="Submit" class="hide"/>
     </form>
   </div>
@@ -64,13 +63,13 @@
 
   <% if !@results.empty? %>
 
-    <table class="table r-table">
+    <table class=" r-table" style="margin-top: -10px; margin-left: -20px; border-collapse:separate; border-spacing:30px;">
       <tbody>
         <% @results.each do |r| %>
         <tr>
           <td>
           <%bgimg="/assets/thumbnailchurch"+r.id.to_s+".jpg"%>
-          <div style="height:300px; width:400px; background-image:url('<%=bgimg%>');background-size:cover;"></div>
+          <div style="height:300px; width:400px; background-image:url('<%=bgimg%>');background-size:cover; background-position:center;"></div>
           </td>
           <%
             highlights = []
@@ -105,7 +104,7 @@
               end
             end
           %>
-          <td>
+          <td valign="top" style="padding-left: 10px;">
             <div class="r-td"><%= highlights[0].html_safe %></div>
             <% if !highlights[1].nil? %>
               <div class="r-td r-td2"><%= highlights[1].html_safe %></div>

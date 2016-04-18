@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160325162629) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "artistic_values", force: :cascade do |t|
     t.text     "description"
     t.integer  "church_id"
@@ -63,7 +66,7 @@ ActiveRecord::Schema.define(version: 20160325162629) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "pg_search_documents", ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  add_index "pg_search_documents", ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id", using: :btree
 
   create_table "suggestions", force: :cascade do |t|
     t.string "church"
