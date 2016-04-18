@@ -53,7 +53,7 @@
         <div class="col-md-6">
         <%=link_to church, :class=>"d-pic-link" do%>
           <div class="d-pic" style="height: 53vh; background-image:url(/assets/thumbnailchurch<%=church.id.to_s%>.jpg); background-size:cover; display:block; margin-top:4.5vh;">
-          <div class="d-pic-text"><center><%=church.name.upcase %>,<br><%= church.location.upcase  %></center></div>
+          <div class="d-pic-text"><center><%=church.name.upcase.html_safe %>,<br><%= church.location.upcase  %></center></div>
           </div>  
           <%end%>
         </div>
