@@ -49,8 +49,9 @@
   <div id="r-form">
     <form action="/results">
       <div class="row">
-        <div class="col-md-2"><br><br><input name="query" class="r-search"></div>
-        <div id="r-message" class="col-md-10">
+        <div class="col-md-2"><br><br><input name="query" class="r-search" style="margin-left:10px;"></div>
+        <br><br>
+        <div id="r-message" class="col-md-10" style="">
           <% if !@message.nil? %>
             <%= @message %>
           <% end %>
